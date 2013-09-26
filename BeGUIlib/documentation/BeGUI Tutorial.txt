@@ -1,0 +1,111 @@
+BeGUI Tutorial
+
+This is the beginnings of a small tutorial for BeGUI, my layout routines
+for the BeOS. This is designed to be used in conjuction with the HTML 
+documentation (look in the documentation folder for the file 
+indexDocumentation.html and check it out with your favorite browser).
+
+What I have done is taken the entire Be Interface set (barring BSliders
+[awaiting the results of a bug report],  BeTab [haven't been able to make it
+work at all from the docs], and BBitmap [need to address the re-sizing
+issues]) and wrapped them in color and font sensitive wrappers. Mostly this
+means replacing the GetPreferredSize() methods, which are not currently font
+sensitive/aware), and storing an rgb_color set for each class, then settings
+these colors in AttachedToWindow().
+
+I have also created a layout engine (now in a library), which is a combination 
+of a LayoutMatrix (of which you declare one or more per window) class and 
+LayoutMatrixItems (which represent the Interface gadgets, and are now 
+automatically created for you) class. I also created a ScrollingWindow BWindow
+wrapper class which is aware of LayoutMatrices and has an underlying
+BScrollView which I made a wrapper class for as well. It works just like a
+Tracker window, in that your LayoutMatrixItems are like file icons that can be
+grouped by LayoutMatrices. The underlying view then sizes itself to
+accommodate the needed space for the display, and if the needed space is too
+large to fit on the "current screen", the window's scroll slider(s) is/are
+activated to access hidden items. There is also a SimpleWindow BWindow
+wrapper class which is unaware of LayoutMatrices, but shares the preference
+storage facilities.
+
+The way you use these is fairly simple and straightforward. First you create
+your window by sub-classing the BWindow wrapper described above (I call it a
+ScrollingWindow class), then in it's CTOR, with LayoutMatrix * lm = new
+LayoutMatrix( numRows, numColumns, thisWindow) you create an instance of a
+LayoutMatrix (the "numX" variables describe a 2 dimensional array as seen
+onscreen, the number of LayoutMatrixItems in a LayoutMatrix must exactly equal
+the product of these two values--i.e. number_of_LayoutMatrixItems = numRows *
+numColumns). It automatically attaches itself to the window and the window
+automatically frees it when it is done with it.
+
+Here is an example of how the LayoutMatrix(2, 3, thisWindow) would be set
+into your window:
+1  2
+3  4
+5  6
+
+and LayoutMatrix(3, 4, thisWindow):
+ 1   2   3
+ 4   5   6
+ 7   8   9
+10  11  12
+
+The creation of the gadget(s) (LayoutMatrixItem), is a bit more complicated,
+but only because you must pass all the values needed by the Be Interface class
+as well as a couple of LayoutMatrixItem specific parameters too. To take a
+simple example, if I wanted a window with a single button, I would create a
+new ScrollingWindow based class:
+class
+ButtonWindow :
+public ScrollingWindow
+{
+   MyButton * theButton;
+   void MessageReceived(BMessage * msg);
+   ButtonWindow();
+   //other obvious methods ignored for simplicity
+};
+ButtonWindow :: ButtonWindow()
+   : theButton(NULL)
+{
+   sem_id calc_sem;
+   if ((calc_sem = create_sem(1, "calc_sem")) < B_NO_ERROR)
+   {
+      puts("sem_id error");/*use your favorite warning method*/
+      return;/*or throw, or exit(1)??*/
+   }
+   acquire_sem(calc_sem);
+   try 
+   {
+      lm = new LayoutMatrix(1, 0, this);
+      theButton = new MyButton("aButton",/*internal view name, can be NULL*/
+         "push me!",/*the button's label, passed to BButton*/
+         'tBUT',/*the value of the BMessage this button will send*/
+         lm);/*LayoutMatrix to which the automatically created LayoutMatrixItem 
+               will be attached*/
+      release_sem(calc_sem);
+      lm->Calc(horizontalOffset, verticalOffset, calc_sem);/*where the offsets just
+        tell the window the top left corner of the displayed LayoutMatrix, additional
+        offsets might well be based upon the previous LayoutMatrix's ->left and
+        ->bottom*/
+   }
+   catch (...)
+   {
+      puts("catch error");/*use your favorite warning method*/
+      release_sem(calc_sem);
+      throw;/*or return, or exit(1)??*/
+   }
+}//end
+
+void
+ButtonWindow :: MessageReceived(BMessage * msg)
+{
+   switch(msg->what)
+   {
+      case 'tBUT':
+         /*do what you will when the button is pressed*/
+      break;
+      default:
+         WindowGuts::MessageReceived(msg);/*make sure to pass unused messages on up the
+                                            chain*/
+      break;
+   }
+}//end

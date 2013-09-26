@@ -1,0 +1,139 @@
+<HTML><HEAD>
+<TITLE>The ColorWell Class</TITLE>
+</HEAD><BODY BGCOLOR = #FFFFFF> <P>
+<P>
+</B></I></TT>
+<center>
+<H1><FONT SIZE=8>T</FONT>he <FONT SIZE=8>C</FONT>olorWell <FONT SIZE=8>C</FONT>lass
+</B></I></TT></center></center>
+<HR>
+<P>
+<UL>
+<FONT SIZE = 3>
+<P>
+Derived from:&nbsp<b>BView</b><br>
+<P>
+</B>Declared in:  <B><a href="../../../colorWell.h"><Font SIZE = 4>colorWell.h</FONT></A>
+<P>
+</B>Library:  <B>libBeGUI.so
+<P>
+</B><HR>
+<H2><A NAME=""><FONT SIZE=6>O</FONT>verview</A></H2>
+<P>
+<H6><A HREF="ColorWellSummary.html">[method summary]</A></H6>
+</B></I></TT>
+<P>
+<Font SIZE = 4>The ColorWell Class</FONT> is used as a color selection tool. It accepts roColour (check out:&nbsp<a href="http://www.rodesign.com"><FONT SIZE = 4>http://www.rodesign.com</FONT></a>) drops.<br>
+<br><FONT SIZE = 4>
+roColour drops come from one of the finest programs on any computer platform <FONT SIZE = 5 COLOR = "112299"><B>roColour 3.0 Web Edition</FONT></b>, brought to you by the fine folks at <FONT SIZE = 5 COLOR = "112299"><B>RO DESIGN, Inc.</FONT></b> <a href="http://www.rodesign.com"><FONT SIZE = 4>http://www.rodesign.com</FONT></a>. I especially wish to thank <FONT SIZE = 5 COLOR = "881599"><B>Richard Oesterreicher</FONT></b> for bringing this program to the <FONT SIZE=5 COLOR = "#0000FF"><U>B</U></FONT><FONT SIZE=5 COLOR = "#FF0000"><U>e</U></FONT><FONT SIZE=5>OS</FONT>.<br>
+<UL><UL><FONT SIZE = 8 COLOR = "208899"><i>THANKS,</i> Richard!<B></FONT></b></UL></UL></FONT>
+<p>
+
+<HR>
+<H3><A NAME="ColorWell()">ColorWell()</A></H3>
+<P>
+<UL>ColorWell(const char * paramName, <br>
+int32 paramColorToChange,<br>
+const char * paramLabel,<br>
+BLooper * paramMessageTarget,<br>
+LayoutMatrix * paramLayoutMatrix);<br>
+</UL>
+<P>
+This is the constructor. The first parameter <b>paramName</b> is passed directly on to the base class <b>BView</b>.<br>
+<p>
+The parameter <b>paramColorToChange</b> is the value of the message passed to the application when this <b>ColorWell</b> receives a color drop.<br>
+<P>
+The parameter <b>paramLabel</b> is the label this <b>ColorWell</b> will have.
+<p>
+The parameter <b>paramMessageTarget</b> is the message target this <b>ColorWell</b> will have--it would generally be the window in which the <b>ColorWell</b> resides.
+<p>
+The parameter <b>paramLayoutMatrix</b> is the <A HREF="../LayoutMatrix.html"><FONT SIZE = 4>LayoutMatrix</FONT></A> to which this gadget will be attached.
+<p>
+</UL>
+<HR>
+<H3><A NAME="~ColorWell()">~ColorWell()</A></H3>
+<P>
+<UL>~ColorWell();
+<P>
+This is the destructor. It only deletes it's label.
+<p>
+</UL>
+<HR>
+<H3><A NAME="AttachedToWindow()">AttachedToWindow()</A></H3>
+<P>
+<UL>void AttachedToWindow(void);
+<P>
+This just overrides the <b>BView</b> method to provide color control, it calls the inherited version.
+<p>
+</UL>
+<HR>
+<H3><A NAME="Draw()">Draw()</A></H3>
+<P>
+<UL>void Draw(<b>BRect</b> rect);
+<P>
+This uses a silly algorithm to draw a deep well gadget (at least I tried--I'm no artist!). It calls the inherited version.
+<p>
+</UL>
+<HR>
+<H3><A NAME="MessageReceived()">MessageReceived()</A></H3>
+<P>
+<UL>virtual void MessageReceived(BMessage * paramMessage);
+<P>
+This calls the system beep, so feedback occurs and the user knows that the drop was received. It then adds the parameter <b>paramColorToChange</b> to the message and calls the inherited version. This way the underlying window gets the message with the added information which lets it know what to change.
+<p>
+</UL>
+<HR>
+<H3><A NAME="GetTextItem()">GetTextItem()</A></H3>
+<P>
+<UL>TextItem * GetTextItem(void) const;
+<P>
+This just returns the private label string.
+<p>
+</UL>
+<HR>
+<H3><A NAME="SetTop()">SetTop()</A></H3>
+<P>
+<UL>void SetTop( const float paramTop);
+<P>
+This just accesses the private value.
+<p>
+</UL>
+<HR>
+<H3><A NAME="GetTop()">GetTop()</A></H3>
+<P>
+<UL>float GetTop(void) const;
+<P>
+This just accesses the private value.
+<p>
+</UL>
+<HR>
+<H3><A NAME="SetLeft()">SetLeft()</A></H3>
+<P>
+<UL>void SetLeft( const float paramLeft);
+<P>
+This just accesses the private value.
+<p>
+</UL>
+<HR>
+<H3><A NAME="GetLeft()">GetLeft()</A></H3>
+<P>
+<UL>float GetLeft(void) const;
+<P>
+This just accesses the private value.
+<p>
+<P></UL></UL>
+<hr>
+<br>
+<br>
+</UL>
+<i><FONT size=6>T</FONT>he <FONT size=6 COLOR="#FF">B</FONT><FONT COLOR="#FF0000" size=5 >e<FONT COLOR="#FF00FF" size=6>GUI
+</FONT><FONT size=6 COLOR="#FF">B</FONT><FONT COLOR="#FF0000" size=5 >ook</FONT></i><FONT COLOR = "0"></i>
+<p></i>
+for version 1.4.2<br>
+Copyright &copy; 1998-1999 Ed Musgrove <FONT COLOR="#0000FF"><U>B</U></FONT><FONT COLOR="#FF0000"><U>e</U></FONT><FONT COLOR="#00"> Developer #2076.  All rights reserved.<br>
+<a href="mailto:edgar@harbornet.com">edgar@harbornet.com</a><br>
+<a href="mailto:emusgrov@linknet.kitsap.lib.wa.us">emusgrov@linknet.kitsap.lib.wa.us</a><br>
+Last modified March 17, 1999.
+</body>
+</html>
+

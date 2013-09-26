@@ -1,0 +1,66 @@
+#!/bin/sh
+
+echo making BeGUI stuff
+
+
+
+echo making libprefs for R4
+cd  libprefsSRC
+make -f makefile.lib
+echo copying libprefs to lib dirs
+cp obj.x86/libprefs.so /boot/home/config/lib
+mimeset -f /boot/home/config/lib/libprefs.so
+cp obj.x86/libprefs.so ../BeGUIlib/lib
+mimeset -f ../BeGUIlib/lib/libprefs.so
+cp obj.x86/libprefs.so ../PrefsEDgar/lib
+mimeset -f ../PrefsEDgar/lib/libprefs.so
+cp obj.x86/libprefs.so ../ResEDgar/lib
+mimeset -f ../ResEDgar/lib/libprefs.so
+rm obj.x86/libprefs.so
+
+cd ../BeGUIlib
+
+echo making libBeGUI.so
+mwbres -o BeGUIStrings.rsrc BeGUIStrings.r
+mimeset -f BeGUIStrings.rsrc
+make -f makefile.lib
+echo copying libBeGUI to lib dirs
+cp obj.x86/libBeGUI.so /boot/home/config/lib
+mimeset -f /boot/home/config/lib/libBeGUI.so
+cp obj.x86/libBeGUI.so lib
+mimeset -f lib/libBeGUI.so
+cp obj.x86/libBeGUI.so ../PrefsEDgar/lib
+mimeset -f ../PrefsEDgar/lib/libBeGUI.so
+cp obj.x86/libBeGUI.so ../ResEDgar/lib
+mimeset -f ../ResEDgar/lib/libBeGUI.so
+rm obj.x86/libBeGUI.so
+
+cd ../PrefsEDgar
+
+echo making PrefsEDgar
+mwbres -o PrefsEDgarStrings.rsrc PrefsEDgarStrings.r
+mimeset -f PrefsEDgarStrings.rsrc
+make -f PrefsEDgar.makefile
+cp obj.x86/PrefsEDgar PrefsEDgar
+mimeset -f PrefsEDgar
+rm obj.x86/PrefsEDgar
+
+cd ../ResEDgar
+
+echo making ResEDgar
+mwbres -o ResEDgarStrings.rsrc ResEDgarStrings.r
+mimeset -f ResEDgarStrings.rsrc
+make -f ResEDgar.makefile
+cp obj.x86/ResEDgar ResEDgar
+mimeset -f ResEDgar
+rm obj.x86/ResEDgar
+
+cd ../Resourceful
+
+echo making Resourceful
+mwbres -o ResourcefulStrings.rsrc ResourcefulStrings.r
+mimeset -f ResourcefulStrings.rsrc
+make -f Resourceful.makefile
+cp obj.x86/Resourceful Resourceful
+mimeset -f Resourceful
+rm obj.x86/Resourceful

@@ -1,0 +1,95 @@
+<HTML><HEAD>
+<TITLE>The Layout Kit</TITLE>
+</HEAD><BODY BGCOLOR=#FFFFFF> <P>
+<P>
+</B></I></TT>
+<center>
+<H1><FONT SIZE=8>T</FONT>he <FONT SIZE=8>L</FONT>ayout <FONT SIZE=8>K</FONT>it
+</B></I></TT></center></center>
+<HR>
+<P>
+<UL>
+<FONT SIZE = 3>
+</B></I></TT>
+<P>
+<TABLE>
+<TR><TD></TD>
+<TD VALIGN=TOP><IMG SRC="../art/featureBullet.gif"></TD>
+<TD><a href="LayoutMatrix.html"><Font size=4>The LayoutMatrix Class</FONT></a>
+</TD>
+</TR>
+
+<TR><TD></TD>
+<TD VALIGN=TOP><IMG SRC="../art/featureBullet.gif"></TD>
+<TD><a href="LayoutMatrixItem.html"><Font size=4>The LayoutMatrixItem Class</FONT></a>
+</TD>
+</TR>
+
+<TR><TD></TD>
+<TD VALIGN=TOP><IMG SRC="../art/featureBullet.gif"></TD>
+<TD><a href="Gadgets/indexGadgets.html"><Font size=4>The Gadgets</FONT></a>
+</TD>
+</TR>
+
+<TR><TD></TD>
+<TD VALIGN=TOP><IMG SRC="../art/featureBullet.gif"></TD>
+<TD><a href="ScrollingWindow.html"><Font size=4>The ScrollingWindow Class</FONT></a>
+</TD>
+</TR>
+
+<TR><TD></TD>
+<TD VALIGN=TOP><IMG SRC="../art/featureBullet.gif"></TD>
+<TD><a href="BaseWindow.html"><Font size=4>The BaseWindow Class</FONT></a>
+</TD>
+</TR>
+
+<TR><TD></TD>
+<TD VALIGN=TOP><IMG SRC="../art/featureBullet.gif"></TD>
+<TD><a href="SimpleWindow.html"><Font size=4>The SimpleWindow Class</FONT></a>
+</TD>
+</TR>
+
+<TR><TD></TD>
+<TD VALIGN=TOP><IMG SRC="../art/featureBullet.gif"></TD>
+<TD><a href="ScrollView.html"><Font size=4>The ScrollView Class</FONT></a>
+<br>
+<br>
+<p>
+</TABLE>
+<hr>
+<P>
+<a href="LayoutMatrix.html"><Font size=4>The LayoutMatrix Class</FONT></a> controls the sizing and placement of gadgets in a window.  They know about their own sizes and positions, so other LayoutMatrices may be positioned with respect to them.<br>
+<p>
+<P>
+<a href="LayoutMatrixItem.html"><Font size=4>The LayoutMatrixItem Class</FONT></a> simply holds a (preferably) customized <b>Be Interface</b> object (see <a href="Gadgets/indexGadgets.html"><Font size=4>The Gadgets</FONT></a>) and privately stores data which the <a href="LayoutMatrix.html"><Font size=4>The LayoutMatrix Class</FONT></a> uses to place and size them.<br>
+<p>
+<P>
+<a href="Gadgets/indexGadgets.html"><Font size=4>The Gadgets</FONT></a> are the slightly customized classes which are mostly just wrappers for the standard <FONT SIZE=5 COLOR="#0000FF"><U>B</U></FONT><FONT SIZE=5 COLOR="#FF0000"><U>e</U></FONT><FONT SIZE=5>OS</FONT> Interface classes. Many of the <FONT SIZE=5 COLOR="#0000FF"><U>B</U></FONT><FONT SIZE=5 COLOR="#FF0000"><U>e</U></FONT><FONT SIZE=5>OS</FONT> classes are not inherently font sensitive and their GetPreferredSize() methods do not take font size into account. The only other aspect is color control which is achieved in the AttachedToWindow() method.<br>
+<p>
+<P>
+<a href="ScrollingWindow.html"><Font size=4>The ScrollingWindow Class</FONT></a> is the basic windowing class from which most scrollable windows are derived. It has the ability to auto-size itself, recall it's position, and scroll the underlying <b>ScrollView</b> if portions of it's display are too large to fit in the window.<br>
+<p>
+<P>
+<a href="BaseWindow.html"><Font size=4>The BaseWindow Class</FONT></a> is a simple windowing class from which some scrollable windows are derived. It has the ability to auto-size itself, recall it's position, and scroll the underlying <b>ScrollView</b> if portions of it's display are too large to fit in the window. It is much more lightweight than the <b>ScrollingWindow</b> class.<br>
+<p>
+<P>
+<a href="SimpleWindow.html"><Font size=4>The SimpleWindow Class</FONT></a> is a very simple windowing class from which blank windows are derived. It has the ability to recall it's position.<br>
+<p>
+<P>
+<a href="ScrollView.html"><Font size=4>The ScrollView Class</FONT></a> is the underlying view of the <a href="ScrollingWindow.html"><Font size=4>ScrollingWindow Class</FONT></a>, it has the job of containing all the gadgets and text.
+<p>
+<br>
+<br>
+</UL>
+<HR>
+<i><FONT size=6>T</FONT>he <FONT size=6 COLOR="#FF">B</FONT><FONT COLOR="#FF0000" size=5 >e<FONT COLOR="#FF00FF" size=6>GUI
+</FONT><FONT size=6 COLOR="#FF">B</FONT><FONT COLOR="#FF0000" size=5 >ook</FONT></i><FONT COLOR = "0"></i>
+<p></i>
+for version 1.4.2<br>
+Copyright &copy; 1998-1999 Ed Musgrove <FONT COLOR="#0000FF"><U>B</U></FONT><FONT COLOR="#FF0000"><U>e</U></FONT><FONT COLOR="#00"> Developer #2076.  All rights reserved.<br>
+<a href="mailto:edgar@harbornet.com">edgar@harbornet.com</a><br>
+<a href="mailto:emusgrov@linknet.kitsap.lib.wa.us">emusgrov@linknet.kitsap.lib.wa.us</a><br>
+Last modified March 17, 1999.
+</body>
+</html>
+

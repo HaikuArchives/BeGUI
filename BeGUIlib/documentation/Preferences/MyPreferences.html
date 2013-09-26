@@ -1,0 +1,238 @@
+<HTML><HEAD>
+<TITLE>The MyPreferences Class</TITLE>
+</HEAD><BODY BGCOLOR = #FFFFFF> <P>
+<P>
+</B></I></TT>
+<center>
+<H1><FONT SIZE=8>T</FONT>he <FONT SIZE=8>M</FONT>yPreferences <FONT SIZE=8>C</FONT>lass
+</B></I></TT></center></center>
+<HR>
+<P>
+<UL>
+<FONT SIZE = 3>
+<P>
+Derived from:&nbsp<b>nothing</b><br>
+<UL><i><FONT SIZE = 5 COLOR = "#00FF">But leans heavily on Jon Watte's libPrefs.<br>
+</FONT> <FONT SIZE = 7 COLOR = "#00FF00">Thanks Jon!</i></FONT></UL>
+<P>
+</B>Declared in:  <B><a href="../../myPreferences.h"><FONT SIZE = 4>myPreferences.h</FONT></A>
+<P>
+</B>Library:  <B>libBeGUI.so
+<P>
+</B><HR>
+<H2><A NAME=""><FONT SIZE=6>O</FONT>verview</A></H2>
+<P>
+<H6><A HREF="MyPreferencesSummary.html">[method summary]</A></H6>
+</B></I></TT>
+<P>
+<FONT SIZE = 4>The MyPreferences Class</FONT> controls the entire preference regime. It allows each window to recall it's place; remembers the current font and it's family, style and attributes; recalls all the preferences for things like if you want to use  color wells and or color controls, or anti-alias the font; and keeps track of all the gadgets' colors. Most of it's members are private, accessed through GetXXX() and SetXXX() functions.<br> This function uses the <FONT SIZE = 4>Preferences</FONT> class and <FONT SIZE = 4>PreferenceSet</FONT> class from <i><FONT SIZE = 4>libPrefs</FONT></i> (see <a href="../../preferences.h"><FONT SIZE = 4>preferences.h</FONT></A>), once again, <FONT SIZE = 5  COLOR = "#FF0066">Thanks Jon!</FONT>
+<p>
+
+<HR>
+<H3><A NAME="MyPreferences()">MyPreferences()</A></H3>
+<P>
+<UL>MyPreferences();
+<P>
+This is the constructor. The very first thing constructed in the application is the <b>BApplication</b>, next is the MyPreferences, and finally the MyApp class. Thus, the first thing constructed in which we have any coding control is the first line of this method:<br>
+<b>FillGlobalsFromResources();</b><br>
+This call simply sets all global strings to NULL, then, using the <b>BApplication</b>'s <b>BResource</b> class method <b>FindString()</b>, fills in all the strings used by the program. This allows the program to be language localized more easily. Currently, all the strings for the Preference stuff are jumbled in with all the application specific strings. At some time I will pull them all out and make a separate resource for Preference strings.<br>
+<p>
+<P>
+Next, an instance of the <FONT SIZE=4>Preference</FONT> class from <i>libPrefs</i> (see <a href="../../preferences.h"><FONT SIZE = 4>preferences.h</FONT></A>) is created on the stack, then an instance of the <FONT SIZE=4>PreferenceSet</FONT> class. Both are InitCheck()ed, and if that is successful, the application goes on to fill the preference values from disk. The entire code is in <a href="../../../myPreferences.cpp"><FONT SIZE = 4>myPreferences.cpp</FONT></A> and is just a lot of calls to <FONT SIZE=4>PreferenceSet::GetData()</FONT>, with default values in case the preferred values do not exist.<br>
+<p>
+</UL>
+<HR>
+<H3><A NAME="~MyPreferences()">~MyPreferences()</A></H3>
+<P>
+<UL>~MyPreferences();
+<P>
+This is the destructor. Once again an instance of the <FONT SIZE=4>Preference<FONT SIZE=4> class from <i>libPrefs</i> (see <a href="../../preferences.h"><FONT SIZE = 4>preferences.h</FONT></A>) is created on the stack, then an instance of the <FONT SIZE=4>PreferenceSet<FONT SIZE=4> class. Both are InitCheck()ed, and if that is successful, the application goes on to Make a lot of <FONT SIZE=4>PreferenceSet::SetData()<FONT SIZE=4> calls, each of which is verified before any further actions are taken. Finally,<br>
+<b>EmptyGlobalsFromResources();</b><br>
+is called which frees all the resource strings allocated in the constructor's call to<br>
+<b>FillGlobalsFromResources();</b><br>
+At some time it might be appropriate to change these calls and use <b>BApplication</b>'s <b>BResource</b> class method <b>LoadString()</b>, but I had problems with it and the documentation is not yet released, so I am sticking with a tried and true method! <b>:)</b><br
+>
+<p>
+</UL>
+<HR>
+<H3><A NAME="OpenPreferencesPanel()">OpenPreferencesPanel()</A></H3>
+<P>
+<UL>void OpenPreferencesPanel(void);
+<P>
+This is the call which the application makes to open the preference panel window. It is fairly smart, opening the panel if closed, activating it and bringing it forward if hidden behind other windows, and unhiding it if it gets hidden.<br>
+<p>
+</UL>
+<HR>
+<H3><A NAME="PreferredBarHeight()">PreferredBarHeight()</A></H3>
+<P>
+<UL>float GetPreferredBarHeight(void) const;<br>
+void SetPreferredBarHeight(const float paramBarHeight);<br>
+<P>
+These calls manipulate the private <b>BStausBar</b> Bar height value.<br>
+<p>
+</UL>
+<HR>
+<H3><A NAME="PreferredFont()">PreferredFont()</A></H3>
+<P>
+<UL>BFont * GetPreferredFont(void) const;<br>
+void SetPreferredFont(const <b>BFont</b> * paramFont);<br>
+void SetToPreferredFont(<b>BFont</b> * paramFont);<br>
+void SetPreferredFontFromData(FontData * paramFontData);<br>
+<P>
+These are probably the most used class functions, they get and set the application's most widely used (default) font. The last method employs <b><FONT SIZE = 4>Dianne Hackborn's <hackbod@lucent.com></b> FontData</FONT> class (see <a href="../../fontData.cpp"><FONT SIZE = 4>fontData.cpp</FONT></A>).<br>
+<p>
+</UL>
+<HR>
+<H3><A NAME="PreferredWindowRect()">PreferredWindowRect()</A></H3>
+<P>
+<UL>void GetPreferredBasicColorWindowRect(<b>BRect</b> * paramWindowRect) const;<br>
+void GetPreferredFontDisplayWindowRect(<b>BRect</b> * paramWindowRect) const;<br>
+void GetPreferredFontPrefWindowRect(<b>BRect</b> * paramWindowRect) const;<br>
+void GetPreferredUInt32ReqWindowRect(<b>BRect</b> * paramWindowRect) const;<br>
+void GetPreferredListViewWindowRect(<b>BRect</b> * paramWindowRect) const;<br>
+void GetPreferredPreferencesWindowRect(<b>BRect</b> * paramWindowRect) const;<br>
+void GetPreferredPrefPanelWindowRect(<b>BRect</b> * paramWindowRect) const;<br>
+void GetPreferredSpecificColorButtonWindowRect(<b>BRect</b> * paramWindowRect) const;<br>
+void GetPreferredSpecificColorCheckBoxWindowRect(<b>BRect</b> * paramWindowRect) const;<br>
+void GetPreferredSpecificColorColorControlWindowRect(<b>BRect</b> * paramWindowRect) const;<br>
+void GetPreferredSpecificColorColorWellWindowRect(<b>BRect</b> * paramWindowRect) const;<br>
+void GetPreferredSpecificColorFloatControlWindowRect(<b>BRect</b> * paramWindowRect) const;<br>
+void GetPreferredSpecificColorListViewWindowRect(<b>BRect</b> * paramWindowRect) const;<br>
+void GetPreferredSpecificColorPictureButtonWindowRect(<b>BRect</b> * paramWindowRect) const;<br>
+void GetPreferredSpecificColorRadioButtonWindowRect(<b>BRect</b> * paramWindowRect) const;<br>
+void GetPreferredSpecificColorStatusBarWindowRect(<b>BRect</b> * paramWindowRect) const;<br>
+void GetPreferredSpecificColorStringDrawerWindowRect(<b>BRect</b> * paramWindowRect) const;<br>
+void GetPreferredSpecificColorStringGadgetWindowRect(<b>BRect</b> * paramWindowRect) const;<br>
+void GetPreferredSpecificColorTextViewWindowRect(<b>BRect</b> * paramWindowRect) const;<br>
+void GetPreferredSpecificColorUInt32ControlWindowRect(<b>BRect</b> * paramWindowRect) const;<br>
+void SetPreferredBasicColorWindowRect(const <b>BRect</b> paramWindowRect);<br>
+void SetPreferredFontDisplayWindowRect(const <b>BRect</b> paramWindowRect);<br>
+void SetPreferredFontPrefWindowRect(const <b>BRect</b> paramWindowRect);<br>
+void SetPreferredUInt32ReqWindowRect(const <b>BRect</b> paramWindowRect);<br>
+void SetPreferredListViewWindowRect(const <b>BRect</b> paramWindowRect);<br>
+void SetPreferredPreferencesWindowRect(const <b>BRect</b> paramWindowRect);<br>
+void SetPreferredPrefPanelWindowRect(const <b>BRect</b> paramWindowRect);<br>
+void SetPreferredSpecificColorButtonWindowRect(const <b>BRect</b> paramWindowRect);<br>
+void SetPreferredSpecificColorCheckBoxWindowRect(const <b>BRect</b> paramWindowRect);<br>
+void SetPreferredSpecificColorColorControlWindowRect(const <b>BRect</b> paramWindowRect);<br>
+void SetPreferredSpecificColorColorWellWindowRect(const <b>BRect</b> paramWindowRect);<br>
+void SetPreferredSpecificColorFloatControlWindowRect(const <b>BRect</b> paramWindowRect);<br>
+void SetPreferredSpecificColorListViewWindowRect(const <b>BRect</b> paramWindowRect);<br>
+void SetPreferredSpecificColorPictureButtonWindowRect(const <b>BRect</b> paramWindowRect);<br>
+void SetPreferredSpecificColorRadioButtonWindowRect(const <b>BRect</b> paramWindowRect);<br>
+void SetPreferredSpecificColorStatusBarWindowRect(const <b>BRect</b> paramWindowRect);<br>
+void SetPreferredSpecificColorStringDrawerWindowRect(const <b>BRect</b> paramWindowRect);<br>
+void SetPreferredSpecificColorStringGadgetWindowRect(const <b>BRect</b> paramWindowRect);<br>
+void SetPreferredSpecificColorTextViewWindowRect(const <b>BRect</b> paramWindowRect);<br>
+void SetPreferredSpecificColorUInt32ControlWindowRect(const <b>BRect</b> paramWindowRect);<br>
+<P>
+These are used to get and set the various preferred window positions for the preference panels. They are only methods of accessing private data. C++ seems to stress this--I find it a bit tedious and do not always follow this procedure. <b>:(</b><br>
+<p>
+</UL>
+<HR>
+<H3><A NAME="PreferredColors()">PreferredColors()</A></H3>
+<P>
+<UL>void GetPreferredColorWellHighColor(rgb_color * paramRGBColor) const;<br>
+void GetPreferredColorWellLowColor(rgb_color * paramRGBColor) const;<br>
+void GetPreferredColorWellViewColor(rgb_color * paramRGBColor) const;<br>
+void GetPreferredFloatControlHighColor(rgb_color * paramRGBColor) const;<br>
+void GetPreferredFloatControlLowColor(rgb_color * paramRGBColor) const;<br>
+void GetPreferredFloatControlViewColor(rgb_color * paramRGBColor) const;<br>
+void GetPreferredHighColor(rgb_color * paramRGBColor) const;<br>
+void GetPreferredLowColor(rgb_color * paramRGBColor) const;<br>
+void GetPreferredMyBarColor(rgb_color * paramRGBColor) const;<br>
+void GetPreferredMyButtonHighColor(rgb_color * paramRGBColor) const;<br>
+void GetPreferredMyButtonLowColor(rgb_color * paramRGBColor) const;<br>
+void GetPreferredMyButtonViewColor(rgb_color * paramRGBColor) const;<br>
+void GetPreferredMyCheckBoxHighColor(rgb_color * paramRGBColor) const;<br>
+void GetPreferredMyCheckBoxLowColor(rgb_color * paramRGBColor) const;<br>
+void GetPreferredMyCheckBoxViewColor(rgb_color * paramRGBColor) const;<br>
+void GetPreferredMyColorControlHighColor(rgb_color * paramRGBColor) const;<br>
+void GetPreferredMyColorControlLowColor(rgb_color * paramRGBColor) const;<br>
+void GetPreferredMyColorControlViewColor(rgb_color * paramRGBColor) const;<br>
+void GetPreferredMyListViewHighColor(rgb_color * paramRGBColor) const;<br>
+void GetPreferredMyListViewLowColor(rgb_color * paramRGBColor) const;<br>
+void GetPreferredMyListViewViewColor(rgb_color * paramRGBColor) const;<br>
+void GetPreferredMyPictureButtonHighColor(rgb_color * paramRGBColor) const;<br>
+void GetPreferredMyPictureButtonLowColor(rgb_color * paramRGBColor) const;<br>
+void GetPreferredMyPictureButtonViewColor(rgb_color * paramRGBColor) const;<br>
+void GetPreferredMyRadioViewHighColor(rgb_color * paramRGBColor) const;<br>
+void GetPreferredMyRadioViewLowColor(rgb_color * paramRGBColor) const;<br>
+void GetPreferredMyRadioViewViewColor(rgb_color * paramRGBColor) const;<br>
+void GetPreferredMyStatusBarHighColor(rgb_color * paramRGBColor) const;<br>
+void GetPreferredMyStatusBarLowColor(rgb_color * paramRGBColor) const;<br>
+void GetPreferredMyStatusBarViewColor(rgb_color * paramRGBColor) const;<br>
+void GetPreferredMyStringDrawerHighColor(rgb_color * paramRGBColor) const;<br>
+void GetPreferredMyStringDrawerLowColor(rgb_color * paramRGBColor) const;<br>
+void GetPreferredMyStringDrawerViewColor(rgb_color * paramRGBColor) const;<br>
+void GetPreferredMyTextViewHighColor(rgb_color * paramRGBColor) const;<br>
+void GetPreferredMyTextViewLowColor(rgb_color * paramRGBColor) const;<br>
+void GetPreferredMyTextViewViewColor(rgb_color * paramRGBColor) const;<br>
+void GetPreferredStringGadgetHighColor(rgb_color * paramRGBColor) const;<br>
+void GetPreferredStringGadgetLowColor(rgb_color * paramRGBColor) const;<br>
+void GetPreferredStringGadgetViewColor(rgb_color * paramRGBColor) const;<br>
+void GetPreferredUInt32ControlHighColor(rgb_color * paramRGBColor) const;<br>
+void GetPreferredUInt32ControlLowColor(rgb_color * paramRGBColor) const;<br>
+void GetPreferredUInt32ControlViewColor(rgb_color * paramRGBColor) const;<br>
+void GetPreferredViewColor(rgb_color * paramRGBColor) const;<br>
+void SetPreferredColorWellHighColor(const rgb_color * paramRGBColor);<br>
+void SetPreferredColorWellLowColor(const rgb_color * paramRGBColor);<br>
+void SetPreferredColorWellViewColor(const rgb_color * paramRGBColor);<br>
+void SetPreferredFloatControlHighColor(const rgb_color * paramRGBColor);<br>
+void SetPreferredFloatControlLowColor(const rgb_color * paramRGBColor);<br>
+void SetPreferredFloatControlViewColor(const rgb_color * paramRGBColor);<br>
+void SetPreferredHighColor(const rgb_color * paramRGBColor);<br>
+void SetPreferredLowColor(const rgb_color * paramRGBColor);<br>
+void SetPreferredMyBarColor(const rgb_color * paramRGBColor);<br>
+void SetPreferredMyButtonHighColor(const rgb_color * paramRGBColor);<br>
+void SetPreferredMyButtonLowColor(const rgb_color * paramRGBColor);<br>
+void SetPreferredMyButtonViewColor(const rgb_color * paramRGBColor);<br>
+void SetPreferredMyCheckBoxHighColor(const rgb_color * paramRGBColor);<br>
+void SetPreferredMyCheckBoxLowColor(const rgb_color * paramRGBColor);<br>
+void SetPreferredMyCheckBoxViewColor(const rgb_color * paramRGBColor);<br>
+void SetPreferredMyColorControlHighColor(const rgb_color * paramRGBColor);<br>
+void SetPreferredMyColorControlLowColor(const rgb_color * paramRGBColor);<br>
+void SetPreferredMyColorControlViewColor(const rgb_color * paramRGBColor);<br>
+void SetPreferredMyListViewHighColor(const rgb_color * paramRGBColor);<br>
+void SetPreferredMyListViewLowColor(const rgb_color * paramRGBColor);<br>
+void SetPreferredMyListViewViewColor(const rgb_color * paramRGBColor);<br>
+void SetPreferredMyPictureButtonHighColor(const rgb_color * paramRGBColor);<br>
+void SetPreferredMyPictureButtonLowColor(const rgb_color * paramRGBColor);<br>
+void SetPreferredMyPictureButtonViewColor(const rgb_color * paramRGBColor);<br>
+void SetPreferredMyRadioViewHighColor(const rgb_color * paramRGBColor);<br>
+void SetPreferredMyRadioViewLowColor(const rgb_color * paramRGBColor);<br>
+void SetPreferredMyRadioViewViewColor(const rgb_color * paramRGBColor);<br>
+void SetPreferredMyStatusBarHighColor(const rgb_color * paramRGBColor);<br>
+void SetPreferredMyStatusBarLowColor(const rgb_color * paramRGBColor);<br>
+void SetPreferredMyStatusBarViewColor(const rgb_color * paramRGBColor);<br>
+void SetPreferredMyStringDrawerHighColor(const rgb_color * paramRGBColor);<br>
+void SetPreferredMyStringDrawerLowColor(const rgb_color * paramRGBColor);<br>
+void SetPreferredMyStringDrawerViewColor(const rgb_color * paramRGBColor);<br>
+void SetPreferredMyTextViewHighColor(const rgb_color * paramRGBColor);<br>
+void SetPreferredMyTextViewLowColor(const rgb_color * paramRGBColor);<br>
+void SetPreferredMyTextViewViewColor(const rgb_color * paramRGBColor);<br>
+void SetPreferredStringGadgetHighColor(const rgb_color * paramRGBColor);<br>
+void SetPreferredStringGadgetLowColor(const rgb_color * paramRGBColor);<br>
+void SetPreferredStringGadgetViewColor(const rgb_color * paramRGBColor);<br>
+void SetPreferredUInt32ControlHighColor(const rgb_color * paramRGBColor);<br>
+void SetPreferredUInt32ControlLowColor(const rgb_color * paramRGBColor);<br>
+void SetPreferredUInt32ControlViewColor(const rgb_color * paramRGBColor);<br>
+void SetPreferredViewColor(const rgb_color * paramRGBColor);<br>
+<P>
+These calls manipulate the private color values stored for the various Gadgets. The six functions that have no specific gadget name related to them set the underlying view's colors (View, High, and Low) for all application windows. They are only methods of accessing private data.
+<P></UL></UL>
+<hr>
+<br>
+<br>
+</UL>
+<i><FONT SIZE = 6>T</FONT>he <FONT SIZE = 6 COLOR="#FF">B</FONT><FONT COLOR="#FF0000" SIZE = 5 >e<FONT COLOR="#FF00FF" SIZE = 6>GUI
+</FONT><FONT SIZE = 6 COLOR="#FF">B</FONT><FONT COLOR="#FF0000" SIZE = 5 >ook</FONT></i><FONT COLOR = "0"></i>
+<p></i>
+for version 1.4.2<br>
+Copyright &copy; 1998-1999 Ed Musgrove <FONT COLOR="#0000FF"><U>B</U></FONT><FONT COLOR="#FF0000"><U>e</U></FONT><FONT COLOR="#00"> Developer #2076.  All rights reserved.<br>
+<a href="mailto:edgar@harbornet.com">edgar@harbornet.com</a><br>
+<a href="mailto:emusgrov@linknet.kitsap.lib.wa.us">emusgrov@linknet.kitsap.lib.wa.us</a><br>
+Last modified March 17, 1999.
+</body>
+</html>
+

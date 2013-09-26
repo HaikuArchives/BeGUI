@@ -1,0 +1,25 @@
+#!/bin/sh
+
+echo making BeGUIlib 
+
+echo making libprefs for R4
+cd /boot/home/BeGUIlib/libprefsSRC
+make -f makefile.lib
+echo copying libprefs to lib dirs
+cp obj.PPC/libprefs.so /boot/home/config/lib
+mimeset -f /boot/home/config/lib/libprefs.so
+cp obj.PPC/libprefs.so /boot/home/BeGUIlib/lib
+mimeset -f /boot/home/BeGUIlib/lib/libprefs.so
+rm obj.PPC/libprefs.so
+
+echo making libBeGUI.so
+cd /boot/home/BeGUIlib
+mwbres -o BeGUIStrings.rsrc BeGUIStrings.r
+mimeset -f BeGUIStrings.rsrc
+make -f makefile.lib
+echo copying libBeGUI to lib dirs
+cp obj.ppc/libBeGUI.so /boot/home/config/lib
+mimeset -f /boot/home/config/lib/libBeGUI.so
+cp obj.ppc/libBeGUI.so lib
+mimeset -f lib/libBeGUI.so
+rm obj.ppc/libBeGUI.so

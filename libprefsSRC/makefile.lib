@@ -1,0 +1,35 @@
+## BeOS Generic Makefile v2.0 ##
+
+# specify the name of the binary
+NAME=libprefs.so
+
+# specify the type of binary
+TYPE=SHARED
+
+#	specify the source files to use
+SRCS=libprefs.cpp
+
+#	specify additional libraries to link against
+LIBS=be root tracker
+
+#	specify the level of optimization that you desire
+OPTIMIZE=FULL
+
+#	specify any preprocessor symbols to be defined.
+DEFINES=
+
+#	specify special warning levels
+WARNINGS=NONE
+
+#	specify whether image symbols will be created
+SYMBOLS=
+
+#	specify debug settings
+DEBUGGER=
+
+#	specify additional compiler flags for all files
+COMPILER_FLAGS=
+
+
+## include the makefile-engine
+include /boot/develop/etc/makefile-engine

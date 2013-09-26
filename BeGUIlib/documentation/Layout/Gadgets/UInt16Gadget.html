@@ -1,0 +1,126 @@
+<HTML><HEAD>
+<TITLE>The UInt16Gadget Class</TITLE>
+</HEAD><BODY BGCOLOR = #FFFFFF> <P>
+<P>
+</B></I></TT>
+<center>
+<H1><FONT SIZE=8>T</FONT>he <FONT SIZE=8>U</FONT>Int16Gadget <FONT SIZE=8>C</FONT>lass
+</B></I></TT></center></center>
+<HR>
+<P>
+<UL>
+<FONT SIZE = 3>
+<P>
+Derived from:&nbsp<b>BTextView</b><br>
+<P>
+</B>Declared in:  <B><a href="../../../uInt16Gadget.h"><Font SIZE = 4>uInt16Gadget.h</FONT></A>
+<P>
+</B>Library:  <B>libBeGUI.so
+<P>
+</B><HR>
+<H2><A NAME=""><FONT SIZE=6>O</FONT>verview</A></H2>
+<P>
+<H6><A HREF="UInt16GadgetSummary.html">[method summary]</A></H6>
+</B></I></TT>
+<P>
+<Font SIZE = 4>The UInt16Gadget Class</FONT> is used to gather floating point numerical data.
+<p>
+
+<HR>
+<H3><A NAME="UInt16Gadget()">UInt16Gadget()</A></H3>
+<P>
+<UL>UInt16Gadget(float paramInitValue,<br>
+<UL>const char * paramName,<br>
+const char * paramLabel,<br>
+float paramTextViewWidth,<br>
+BLooper * paramMessageTarget,<br>
+LayoutMatrix * paramLayoutMatrix,<br>
+bool paramMakeFocus = <i>false</i>);
+</UL>
+<P>
+This is the constructor. The parameter <b>paramInitValue</b> is the text (a floating point number) with which the gadget initially opens.
+<p>
+The parameter <b>paramName</b> is used to name the gadget--might be useful in scripts--it may be NULL.
+<p>
+The parameter <b>paramLabel</b> is used to label the gadget--it may be NULL, in which case the gadget will have no label.
+<P>
+The parameter <b>paramTextViewWidth</b> is best left at 0 (zero). If a non-zero value is supplied it overrides the built-in balance between the label width, container width and overall gadget width. This might be desired if you want to create a table of string entries who's labels are of different lengths, but you still want all the entry containers to line up. You would pre-calculate the longest label, then pass this value in to all the gadgets' <b>paramTextViewWidth</b>.
+<p>
+The parameter <b>paramMessageTarget</b> is the message target for this gadget--it generally points to the window in which the gadget resides.
+<P>
+The parameter <b>paramLayoutMatrix</b> is the <A HREF="../LayoutMatrix.html">LayoutMatrix</A> to which this gadget will be attached.
+<p>
+<P>
+The parameter <b>paramMakeFocus</b> has a default value of <i>false</i>, and only needs to be set to <i>true</i> when you wish this gadget to have focus immediately upon window creation.
+<p>
+</UL>
+<HR>
+<H3><A NAME="~UInt16Gadget()">~UInt16Gadget()</A></H3>
+<P>
+<UL>~UInt16Gadget();
+<P>
+This is the destructor. It does nothing.
+<p>
+</UL>
+<HR>
+<H3><A NAME="GetLeft()">GetLeft()</A></H3>
+<P>
+<UL>float 	GetLeft(void);
+<P>
+Returns the value of the private member left edge.
+<p>
+</UL>
+<HR>
+<H3><A NAME="GetTop()">GetTop()</A></H3>
+<P>
+<UL>float 	GetTop(void);
+<P>
+Returns the value of the private member top edge.
+<p>
+</UL>
+<HR>
+<H3><A NAME="SetLeft()">SetLeft()</A></H3>
+<P>
+<UL>void SetLeft(const float paramLeft);
+<P>
+Sets the value of the private member left edge.
+<p>
+</UL>
+<HR>
+<H3><A NAME="SetTop()">SetTop()</A></H3>
+<P>
+<UL>void SetTop(const float paramTop);
+<P>
+Sets the value of the private member top edge.
+<p>
+</UL>
+<HR>
+<H3><A NAME="MessageReceived()">MessageReceived()</A></H3>
+<P>
+<UL>virtual void 	MessageReceived(BMessage * paramMessage);
+<P>
+This overrides the inherent <b>MessageReceived()</b>. It does a bit of numerical testing on the textual entry and warns the user of problems when found.
+<p>
+</UL>
+<HR>
+<H3><A NAME="AttachedToWindow()">AttachedToWindow()</A></H3>
+<P>
+<UL>void AttachedToWindow(void);
+<P>
+This just overrides the <b>BTextView</b> method to provide color control and to set focus, it calls the inherited version.
+<P></UL></UL>
+<hr>
+<br>
+<br>
+</UL>
+<i><FONT size=6>T</FONT>he <FONT size=6 COLOR="#FF">B</FONT><FONT COLOR="#FF0000" size=5 >e<FONT COLOR="#FF00FF" size=6>GUI
+</FONT><FONT size=6 COLOR="#FF">B</FONT><FONT COLOR="#FF0000" size=5 >ook</FONT></i><FONT COLOR = "0"></i>
+<p></i>
+for version 1.4.2<br>
+Copyright &copy; 1998-1999 Ed Musgrove <FONT COLOR="#0000FF"><U>B</U></FONT><FONT COLOR="#FF0000"><U>e</U></FONT><FONT COLOR="#00"> Developer #2076.  All rights reserved.<br>
+<a href="mailto:edgar@harbornet.com">edgar@harbornet.com</a><br>
+<a href="mailto:emusgrov@linknet.kitsap.lib.wa.us">emusgrov@linknet.kitsap.lib.wa.us</a><br>
+Last modified March 17, 1999.
+</body>
+</html>
+

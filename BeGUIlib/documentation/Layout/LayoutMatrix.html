@@ -1,0 +1,87 @@
+<HTML><HEAD>
+<TITLE>The LayoutMatrix Class</TITLE>
+</HEAD><BODY BGCOLOR = #FFFFFF> <P>
+<P>
+</B></I></TT>
+<center>
+<H1><FONT SIZE=8>T</FONT>he <FONT SIZE=8>L</FONT>ayoutMatrix <FONT SIZE=8>C</FONT>lass
+</B></I></TT></center></center>
+<HR>
+<P>
+<UL>
+
+<P><FONT SIZE = 3>
+Derived from:&nbsp<b>nothing</b><br>
+<P>
+</B>Declared in:  <B><a href="../../layoutMatrix.h"><Font SIZE = 4>layoutMatrix.h</FONT></A>
+<P>
+</B>Library:  <B>libBeGUI.so
+<P>
+</B><HR>
+<H2><A NAME=""><FONT SIZE=6>O</FONT>verview</A></H2>
+<P>
+<H6><A HREF="LayoutMatrixSummary.html">[method summary]</A></H6>
+</B></I></TT>
+<P>
+<Font SIZE = 4>The LayoutMatrix Class</FONT> controls the sizing and placement of gadgets in a window.  They know about their own sizes and positions, so other LayoutMatrices may be positioned with respect to them.<br>
+<p>
+<P><FONT COLOR="FF0000">
+<b>Note:</b>&nbsp<FONT COLOR="0">
+All instances of the <Font SIZE = 4>LayoutMatrix Class</FONT> will be automatically attached to the <a href="ScrollingWindow.html"><Font SIZE = 4 COLOR = "0000FF">ScrollingWindow</FONT></A> or <a href="BaseWindow.html"><Font SIZE = 4 COLOR = "0000FF">BaseWindow</FONT></A>which is passed in the constructor method. When the <b>ScrollingWindow</b> or <b>BaseWindow</b> is done with the <b>LayoutMatrix</b> it will delete the <b>LayoutMatrix</b>. It is therefore manditory to create the <b>LayoutMatrix</b> using the "new" allocator.
+<p>
+<HR>
+<H3><A NAME="LayoutMatrix()">LayoutMatrix()</A></H3>
+<P>
+<UL>LayoutMatrix(const uint32 uparamFlags,<br>
+<UL>const uint32 uparamRows,<br>
+const uint32 uparamColumns,<br>
+ScrollingWindow * wparamScrollingWindow);
+</UL>
+<P>LayoutMatrix(const uint32 uparamFlags,<br>
+<UL>const uint32 uparamRows,<br>
+const uint32 uparamColumns,<br>
+BaseWindow * wparamBaseWindow);
+</UL>
+<P>
+These are the constructors. The parameter <b>uparamFlags</b>, lets the class know how all it's gadgets will be sized. There are only two choices, <b>SAMESIZE</b> and <b>BESTSIZE</b>. <b>SAMESIZE</b> tells the class to make every <a href="LayoutMatrixItem.html"><Font SIZE = 4>LayoutMatrixItem</FONT></A> in the class occupy the same space as all others. This makes for nice looking tables of buttons. <b>BESTSIZE</b> lets the class calculate the least possible size for each <a href="LayoutMatrixItem.html"><Font SIZE = 4>layoutMatrixItem</FONT></A> and sizes them accordingly. This is very useful when a number of irregularly shaped object are grouped together, like buttons, checkboxes, and color controls.<br>
+<p>
+<P>
+The next two parameters, <b>uparamRows</b> and <b>uparamColumns</b> let the class know how you want the items arranged. For instance, if the class contains 12 <a href="LayoutMatrixItem.html"><Font SIZE = 4>LayoutMatrixItems</FONT></A> and you want them arranged in a single long line, set <b>uparamRows</b> equal to 1 and <b>uparamColumns</b> equal to 12. Or, if you want 3 <a href="LayoutMatrixItem.html"><Font SIZE = 4>LayoutMatrixItems</FONT></A> across and 4 down, set <b>uparamRows</b> equal to 4 and <b>uparamColumns</b> equal to 3. The critical thing is that the number of <a href="LayoutMatrixItem.html"><Font SIZE = 4>LayoutMatrixItems</FONT></A> in the class must be equal to the product of <b>uparamRows</b> and <b>uparamColumns</b> (<b>uparamRows * uparamColumns</b>). A sanity check for this is not in place--I will probably put one in place soon, as there will be a crash if the rule is not followed!<br>
+<p>
+<P>
+The parameter <b>wparamScrollingWindow</b> or <b>wparamBaseWindow</b> let's the class know to which window (see <a href="ScrollingWindow.html"><Font SIZE = 4>ScrollingWindow</FONT></A> or <a href="BaseWindow.html"><Font SIZE = 4>BaseWindow</FONT></A>)it belongs so that it may attach itself to that window's list of <FONT SIZE=4>LayoutMatrices</FONT>. 
+<p>
+</UL>
+<HR>
+<H3><A NAME="~LayoutMatrix()">~LayoutMatrix()</A></H3>
+<P>
+<UL>~LayoutMatrix();
+<P>
+This is the destructor. It just deletes some internal lists.
+<p>
+</UL>
+<HR>
+<H3><A NAME="Calc()">Calc()</A></H3>
+<P>
+<UL>void Calc(const float paramMatrixLeft,<br>
+<UL>const float paramMatrixTop,<br>
+sem_id paramSemID);
+</UL>
+<P>
+This is the real work horse of the class. It calculates all it's LayoutMatrixItem sizes and positions. It calculates it's own size and stores this information for your future use. It readies itself to be placed in the position specified by <b>paramMatrixLeft</b> and <b>paramMatrixTop</b>. It uses the semaphore to insure that all it's calculations are finished before the next <Font SIZE = 4>LayoutMatrix</FONT> starts it's calculations, as the second <Font SIZE = 4>LayoutMatrix</FONT> may well use values from the first <Font SIZE = 4>LayoutMatrix</FONT>.
+<P></UL></UL>
+<hr>
+<br>
+<br>
+</UL>
+<i><FONT size=6>T</FONT>he <FONT size=6 COLOR="#FF">B</FONT><FONT COLOR="#FF0000" size=5 >e<FONT COLOR="#FF00FF" size=6>GUI
+</FONT><FONT size=6 COLOR="#FF">B</FONT><FONT COLOR="#FF0000" size=5 >ook</FONT></i><FONT COLOR = "0"></i>
+<p></i>
+for version 1.4.2<br>
+Copyright &copy; 1998-1999 Ed Musgrove <FONT COLOR="#0000FF"><U>B</U></FONT><FONT COLOR="#FF0000"><U>e</U></FONT><FONT COLOR="#00"> Developer #2076.  All rights reserved.<br>
+<a href="mailto:edgar@harbornet.com">edgar@harbornet.com</a><br>
+<a href="mailto:emusgrov@linknet.kitsap.lib.wa.us">emusgrov@linknet.kitsap.lib.wa.us</a><br>
+Last modified March 17, 1999.
+</body>
+</html>
+

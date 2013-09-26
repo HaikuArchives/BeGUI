@@ -1,0 +1,111 @@
+<HTML><HEAD>
+<TITLE>The MyStringDrawer Class</TITLE>
+</HEAD><BODY BGCOLOR = #FFFFFF> <P>
+<P>
+</B></I></TT>
+<center>
+<H1><FONT SIZE=8>T</FONT>he <FONT SIZE=8>M</FONT>yStringDrawer <FONT SIZE=8>C</FONT>lass
+</B></I></TT></center></center>
+<HR>
+<P>
+<UL>
+<FONT SIZE = 3>
+<P>
+Derived from:&nbsp<b>BStringView</b><br>
+<P>
+</B>Declared in:  <B><a href="../../../myStringDrawer.h"><Font SIZE = 4>myStringDrawer.h</FONT></A>
+<P>
+</B>Library:  <B>libBeGUI.so
+<P>
+</B><HR>
+<H2><A NAME=""><FONT SIZE=6>O</FONT>verview</A></H2>
+<P>
+<H6><A HREF="MyStringDrawerSummary.html">[method summary]</A></H6>
+</B></I></TT>
+<P>
+<Font SIZE = 4>The MyStringDrawer Class</FONT> is used as a simple string drawing device. It is a wrapper for the <FONT SIZE=5 COLOR = "#0000FF"><U>B</U></FONT><FONT SIZE=5 COLOR = "#FF0000"><U>e</U></FONT><FONT SIZE=5>OS</FONT> <b>BStringView</b> class.
+<p>
+
+<HR>
+<H3><A NAME="MyStringDrawer()">MyStringDrawer()</A></H3>
+<P>
+<UL>MyStringDrawer(const char * paramName, <br>
+<UL>const char * paramText,<br>
+BFont * paramFont,<br>
+LayoutMatrix * paramLayoutMatrix,<br>
+rgb_color * paramHighColor = NULL,<br>
+rgb_color * paramLowColor = NULL,<br>
+rgb_color * paramViewColor = NULL);<br>
+</UL>
+<P>
+This is the constructor. The first two parameters, <b>paramName</b> and <b>paramText</b> are passed on to the <b>BStringView</b> class. Make sure to create <b>paramText</b> with "new"--it will be deleted when this class object is deleted.
+<p>
+<P>
+The parameter <b>paramFont</b> sets the font for the text. It may be NULL, in which case the string is drawn in the application's default font.
+<p>
+<P>
+The parameter <b>paramLayoutMatrix</b> is the <A HREF="../LayoutMatrix.html">LayoutMatrix</A> to which this gadget will be attached.
+<p>
+<P>
+The parameters <b>paramHighColor</b>, <b>paramLowColor</b> and <b>paramViewColor</b> will be used (if not NULL) when this gadget is attached. If any of them are NULL the preferred color will be used in default for that parameter. Make sure to create <b>paramHighColor</b>, <b>paramLowColor</b> and <b>paramViewColor</b> with "new"--they will be deleted when this class object is deleted. You may pass any or all of these color parameters in. It makes the most sense to pass in at least High and Low if text anti-aliasing is on. If this class's default View color is different from the underlying preferred View color, you might want to pass in the underlying View color.
+<p>
+<P>
+There is a bit of code in this CTOR, if the parameter <b>paramFont</b> is NULL a new copy of the application's default font is used.
+<p>
+</UL>
+<HR>
+<H3><A NAME="~MyStringDrawer()">~MyStringDrawer()</A></H3>
+<P>
+<UL>~MyStringDrawer();
+<P>
+This is the destructor. It deletes five items.
+<p>
+</UL>
+<HR>
+<H3><A NAME="AttachedToWindow()">AttachedToWindow()</A></H3>
+<P>
+<UL>void AttachedToWindow(void);
+<P>
+This just overrides the <b>BTextView</b> method to provide color control, it calls the inherited version. The color parameters are checked and used if passed in, otherwise the preferred colors are used.
+<p>
+</UL>
+<HR>
+<H3><A NAME="GetFont()">GetFont()</A></H3>
+<P>
+<UL>BFont * GetFont(void) const;
+<P>
+This just provides access to the private data.
+<p>
+</UL>
+<HR>
+<H3><A NAME="GetTextItem()">GetTextItem()</A></H3>
+<P>
+<UL>TextItem * GetTextItem(void) const;
+<P>
+This just provides access to the private data.
+<p>
+</UL>
+<HR>
+<H3><A NAME="MyGetPreferredSize()">MyGetPreferredSize()</A></H3>
+<P>
+<UL>void MyGetPreferredSize(float * paramWidth,<br>
+<UL>float * paramHeight)
+</UL>
+<P>
+The <b>BStringView</b> class's method <b>GetPreferredSize()</b> has some problems, so I have provided a replacement which works for my needs.
+<P></UL></UL>
+<hr>
+<br>
+<br>
+</UL>
+<i><FONT size=6>T</FONT>he <FONT size=6 COLOR="#FF">B</FONT><FONT COLOR="#FF0000" size=5 >e<FONT COLOR="#FF00FF" size=6>GUI
+</FONT><FONT size=6 COLOR="#FF">B</FONT><FONT COLOR="#FF0000" size=5 >ook</FONT></i><FONT COLOR = "0"></i>
+<p></i>
+for version 1.4.2<br>
+Copyright &copy; 1998-1999 Ed Musgrove <FONT COLOR="#0000FF"><U>B</U></FONT><FONT COLOR="#FF0000"><U>e</U></FONT><FONT COLOR="#00"> Developer #2076.  All rights reserved.<br>
+<a href="mailto:edgar@harbornet.com">edgar@harbornet.com</a><br>
+<a href="mailto:emusgrov@linknet.kitsap.lib.wa.us">emusgrov@linknet.kitsap.lib.wa.us</a><br>
+Last modified March 17, 1999.
+</body>
+</html>
+

@@ -1,0 +1,1 @@
+/boot/home/BeGUI/BeGUIlib/filterCarriageReturn.h

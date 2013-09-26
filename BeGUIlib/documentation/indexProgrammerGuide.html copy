@@ -1,0 +1,60 @@
+<HTML><HEAD>
+<TITLE>BeGUI Programmer's Reference</TITLE>
+</HEAD><BODY BGCOLOR=#FFFFFF>
+<center>
+<i><FONT SIZE=7 COLOR="#FF">B</FONT><FONT COLOR="#FF0000" SIZE = 5 >e<FONT COLOR="#FF00FF" SIZE = 7>GUI</i></FONT><FONT COLOR = "0"><br>
+<FONT SIZE=6 >version 1.4.2</FONT></i></b>
+<FONT SIZE=5 >for</FONT><br>
+<i><FONT SIZE=6 COLOR="#0000FF"><U>B</U></FONT><FONT SIZE=6 COLOR="#FF0000"><U>e</U></FONT><FONT SIZE=6>OS Release 4</FONT></i></b>
+</center>
+</B></I></TT>
+<CENTER>
+<FONT SIZE = 6 COLOR="#FF"><i>B</FONT><FONT COLOR="#FF0000" SIZE = 5 >e<FONT COLOR="#FF00FF" SIZE = 6>GUI
+</FONT><FONT SIZE = 6 COLOR="0">P</FONT><FONT SIZE = 5 COLOR="0">rogrammer's</FONT><FONT SIZE = 6 COLOR="0">R</FONT><FONT  SIZE = 5 COLOR="0">eference</FONT></i></i><FONT COLOR="0"><br>
+for Release 1<br>
+Table of Contents</CENTER>
+<UL>
+<FONT SIZE = 3><FONT COLOR = "0">
+<FONT SIZE = 4><b><FONT COLOR="#FF0000">Note:&nbsp</b><FONT COLOR="00"></b></b>While this documentation is copyright, anyone is free to redistribute it as long as they do not change the fundamental text. Changes to the HTML coding are fine, as is any removal of the HTML code, or any re-formatting to fit other distribution styles or formats.</FONT><br></UL>
+</B></I></TT>
+<TABLE>
+<TR><TD></TD>
+<TD VALIGN=TOP><IMG SRC="art/featureBullet.gif"></TD>
+<TD><a href="Release_Notes/indexReleaseNote.html"><FONT SIZE = 4>Release Notes</FONT></a>
+</TD>
+</TR>
+
+<TR><TD></TD>
+<TD VALIGN=TOP><IMG SRC="art/featureBullet.gif"></TD>
+<TD><a href="Layout/indexLayout.html"><FONT SIZE = 4>The Layout Kit</FONT></a>
+</TD>
+</TR>
+
+<TR><TD></TD>
+<TD VALIGN=TOP><IMG SRC="art/featureBullet.gif"></TD>
+<TD><a href="Preferences/indexPreferences.html"><FONT SIZE = 4>The MyPreferences Kit</FONT></a>
+</TD>
+</TR>
+
+<TR><TD></TD>
+<TD VALIGN=TOP><IMG SRC="art/featureBullet.gif"></TD>
+<TD><a href="ExampleApp/indexExample.html"><FONT SIZE = 4>The Example Application</FONT>
+<br>
+<br>
+<br>
+<br>
+<p>
+</TABLE>
+</UL>
+<hr>
+<i><FONT SIZE = 6>T</FONT>he <FONT SIZE = 6 COLOR="#FF">B</FONT><FONT COLOR="#FF0000" SIZE = 5 >e<FONT COLOR="#FF00FF" SIZE = 6>GUI
+</FONT><FONT SIZE = 6 COLOR="#FF">B</FONT><FONT COLOR="#FF0000" SIZE = 5 >ook</FONT></i><FONT COLOR = "0"></i>
+<p></i>
+for version 1.4.2<br>
+Copyright &copy; 1998-1999 Ed Musgrove <FONT COLOR="#0000FF"><U>B</U></FONT><FONT COLOR="#FF0000"><U>e</U></FONT><FONT COLOR="#00"> Developer #2076.  All rights reserved.<br>
+<a href="mailto:edgar@harbornet.com">edgar@harbornet.com</a><br>
+<a href="mailto:emusgrov@linknet.kitsap.lib.wa.us">emusgrov@linknet.kitsap.lib.wa.us</a><br>
+Last modified March 17, 1999.
+</body>
+</html>
+

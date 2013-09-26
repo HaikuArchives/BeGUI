@@ -1,0 +1,87 @@
+<HTML><HEAD>
+<TITLE>The StringControl Class</TITLE>
+</HEAD><BODY BGCOLOR = #FFFFFF> <P>
+<P>
+</B></I></TT>
+<FONT SIZE = 3><center>
+<H1><FONT SIZE=8>T</FONT>he <FONT SIZE=8>S</FONT>tringControl <FONT SIZE=8>C</FONT>lass
+</B></I></TT></center></center>
+<HR>
+<P>
+<UL>
+<FONT SIZE = 3>
+<P>
+Derived from:&nbsp<b>BTextControl</b><br>
+<P>
+</B>Declared in:  <B><a href="../../../stringControl.h"><Font SIZE = 4>stringControl.h</FONT></A>
+<P>
+</B>Library:  <B>libBeGUI.so
+<P>
+</B><HR>
+<H2><A NAME=""><FONT SIZE=6>O</FONT>verview</A></H2>
+<P>
+<H6><A HREF="StringControlSummary.html">[method summary]</A></H6>
+</B></I></TT>
+<P>
+<Font SIZE = 4>The StringControl Class</FONT> is used to gather simple one line string data. It may be used for numerical data, but specialized number entry gadgets are provided (see <A HREF="UInt32Gadget.html">UInt32Gadget</A>, <A HREF="FloatGadget.html">FloatGadget</A> etc.).<br>
+
+<FONT COLOR = "FF0000" SIZE=6><b>Note: </b></FONT><FONT COLOR = "CC0000" SIZE=5>This control is not font sensitive. This has been replaced by a much more functional <b>StringGadget</b> (see <a href="StringGadget.html"><FONT COLOR = "0000FF" SIZE = 4>StringGadget</FONT></A>).</FONT>
+<p>
+<HR>
+<H3><A NAME="StringControl()">StringControl()</A></H3>
+<P>
+<UL>StringControl(const char * paramName,<br>
+<UL>const char * paramLabel,<br>
+const char * paramText,<br>
+uint32 uparamMsg,<br>
+float paramTextViewWidth,<br>
+LayoutMatrix * paramLayoutMatrix,<br>
+bool paramMakeFocus = <i>false</i>);
+</UL>
+<P>
+This is the constructor. The parameter <b>paramName</b> sets the name of the gadget--it may be NULL, if not it may be useful in scripts.
+<p>
+The parameter <b>paramLabel</b> is used to label the gadget--it may be NULL, in which case the gadget will have no label.
+<p>
+The parameter <b>paramText</b> sets the initial entry string--it may be NULL.
+<p>
+The parameter <b>uparamMsg</b> is the value of the message this gadget will send when a carriage return is pressed.
+<p>
+The parameter <b>paramTextViewWidth</b> is the width of the text entry area, it may be 0 (zero), in which case the size is calculated from the initial entry string.
+<P>
+The parameter <b>paramLayoutMatrix</b> is the <A HREF="../LayoutMatrix.html">LayoutMatrix</A> to which this gadget will be attached.
+<p>
+<P>
+The parameter <b>paramMakeFocus</b> has a default value of <i>false</i>, and only needs to be set to <i>true</i> when you wish this gadget to have focus immediately upon window creation.
+<p>
+</UL>
+<HR>
+<H3><A NAME="~StringControl()">~StringControl()</A></H3>
+<P>
+<UL>~StringControl();
+<P>
+This is the destructor. It does nothing.
+<p>
+</UL>
+<HR>
+<H3><A NAME="AttachedToWindow()">AttachedToWindow()</A></H3>
+<P>
+<UL>void AttachedToWindow(void);
+<P>
+This just overrides the <b>BTextControl</b> method to provide color control and to set focus, it calls the inherited version.
+<P></UL></UL>
+<hr>
+<br>
+<br>
+</UL>
+<i><FONT size=6>T</FONT>he <FONT size=6 COLOR="#FF">B</FONT><FONT COLOR="#FF0000" size=5 >e<FONT COLOR="#FF00FF" size=6>GUI
+</FONT><FONT size=6 COLOR="#FF">B</FONT><FONT COLOR="#FF0000" size=5 >ook</FONT></i><FONT COLOR = "0"></i>
+<p></i>
+for version 1.4.2<br>
+Copyright &copy; 1998-1999 Ed Musgrove <FONT COLOR="#0000FF"><U>B</U></FONT><FONT COLOR="#FF0000"><U>e</U></FONT><FONT COLOR="#00"> Developer #2076.  All rights reserved.<br>
+<a href="mailto:edgar@harbornet.com">edgar@harbornet.com</a><br>
+<a href="mailto:emusgrov@linknet.kitsap.lib.wa.us">emusgrov@linknet.kitsap.lib.wa.us</a><br>
+Last modified March 17, 1999.
+</body>
+</html>
+

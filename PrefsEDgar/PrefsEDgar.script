@@ -1,0 +1,7 @@
+
+echo making PrefsEDgar
+make -f PrefsEDgar.makefile
+cp obj.ppc/PrefsEDgar PrefsEDgar
+mimeset -f PrefsEDgar
+rm obj.ppc/PrefsEDgar
+PrefsEDgar

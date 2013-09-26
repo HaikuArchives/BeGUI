@@ -1,0 +1,84 @@
+<HTML><HEAD>
+<TITLE>BeGUI User's Guide</TITLE>
+</HEAD><BODY BGCOLOR=#FFFFFF>
+<center>
+<i><FONT SIZE=7 COLOR="#FF">B</FONT><FONT COLOR="#FF0000" SIZE = 5 >e<FONT COLOR="#FF00FF" SIZE = 7>GUI</i></FONT><FONT COLOR = "0"><br>
+<FONT SIZE=6 >version 1.4.2</FONT></i></b>
+<FONT SIZE=5 >for</FONT><br>
+<i><FONT SIZE=6 COLOR="#0000FF"><U>B</U></FONT><FONT SIZE=6 COLOR="#FF0000"><U>e</U></FONT><FONT SIZE=6>OS Release 4</FONT></i></b>
+</center>
+</B></I></TT>
+<CENTER>
+<FONT SIZE = 6 COLOR="#FF"><i>B</FONT><FONT COLOR="#FF0000" SIZE = 5 >e<FONT COLOR="#FF00FF" SIZE = 6>GUI
+</FONT><FONT SIZE = 6 COLOR="0">U</FONT><FONT COLOR="0" SIZE = 5 >ser's</FONT><FONT SIZE = 6 COLOR="0">G</FONT><FONT COLOR="0" SIZE = 5 >uide</FONT></i></i><FONT COLOR="0"><br>
+for Release 1<br>
+Table of Contents</CENTER>
+<UL>
+<FONT SIZE = 3><FONT COLOR = "0">
+<FONT SIZE = 4><b><FONT COLOR="#FF0000">Note:&nbsp</b><FONT COLOR="00"></b></b>While this documentation is copyright, anyone is free to redistribute it as long as they do not change the fundamental text. Changes to the HTML coding are fine, as is any removal of the HTML code, or any re-formatting to fit other distribution styles or formats.</FONT><br></UL>
+</B></I></TT>
+<P>
+<FONT SIZE=5 COLOR="#FF">B</FONT><FONT COLOR="#FF0000" SIZE = 4 >e<FONT COLOR="#FF00FF" SIZE = 5>GUI</i></FONT><FONT COLOR = "0"> is implemented as a shared library. Programmers who wish to present font and color sensitive applications which may be user localized for language create their apps designed around the concepts put forth in the <FONT SIZE=5 COLOR="#FF">B</FONT><FONT COLOR="#FF0000" SIZE = 4 >e<FONT COLOR="#FF00FF" SIZE = 5>GUI</i></FONT><FONT COLOR = "0"> Programmer's Reference.
+<p>
+<center><b>What does this mean to the user?</b></center>
+<P>
+<FONT SIZE=5 COLOR="#FF">B</FONT><FONT COLOR="#FF0000" SIZE = 4 >e<FONT COLOR="#FF00FF" SIZE = 5>GUI</i></FONT><FONT COLOR = "0"> has global preference settings for many user interface objects (things like buttons and gadgets). These settings control the font family and size with which these items are drawn. They also control the color schemes these items use. <FONT SIZE=5 COLOR="#FF">B</FONT><FONT COLOR="#FF0000" SIZE = 4 >e<FONT COLOR="#FF00FF" SIZE = 5>GUI</i></FONT><FONT COLOR = "0"> also lets an application store critical data like the size and position of a window, or a user preference (like if fonts are anti-aliased).
+<p>
+<center><b>How do I access <FONT SIZE=5 COLOR="#FF">B</FONT><FONT COLOR="#FF0000" SIZE = 4 >e<FONT COLOR="#FF00FF" SIZE = 5>GUI</i></FONT><FONT COLOR = "0">?</b></b></center>
+<P>
+<FONT SIZE=5 COLOR="#FF">B</FONT><FONT COLOR="#FF0000" SIZE = 4 >e<FONT COLOR="#FF00FF" SIZE = 5>GUI</i></FONT><FONT COLOR = "0"> is usually accessed from a menu in an application. It is up to each application developer to choose how to present the user with direct access. <FONT SIZE=5 COLOR="#FF">B</FONT><FONT COLOR="#FF0000" SIZE = 4 >e<FONT COLOR="#FF00FF" SIZE = 5>GUI</i></FONT><FONT COLOR = "0"> can also be accessed using the <FONT SIZE=5 COLOR="#FF00FF">P</FONT><FONT COLOR="#0000FF" SIZE = 4 >refs<FONT COLOR="#FF00FF" SIZE = 5>ED</i></FONT><FONT COLOR="#0000FF" SIZE = 4 >gar</FONT><FONT COLOR = "0"> application which is the demo application provided with the library.
+<p>
+Use your favorite <FONT SIZE=5 COLOR="#FF">B</FONT><FONT COLOR="#FF0000" SIZE = 4 >e<FONT COLOR="#FF00FF" SIZE = 5>GUI</i></FONT><FONT COLOR = "0">-based application (or <FONT SIZE=5 COLOR="#FF00FF">P</FONT><FONT COLOR="#0000FF" SIZE = 4 >refs<FONT COLOR="#FF00FF" SIZE = 5>ED</i></FONT><FONT COLOR="#0000FF" SIZE = 4 >gar</FONT><FONT COLOR = "0">, which has a item in the "APP" menu) to open the main preference window. It should look something like this:
+<p>
+<center>
+<H1><FONT SIZE=8>T</FONT>he <FONT SIZE=8>P</FONT>reference <FONT SIZE=8>P</FONT>anel
+</B></I></TT></center></center>
+<p>
+<IMG SRC="Preferences/prefPanel.jpg">
+<p>
+The preference panel gives access to all the other specific preference panels. Select any of the buttons to get control over the specific gadget listed on it's label.<br>
+<P>
+There are two general preference settings on this panel as well. These checkboxes control which of the two styles of color controls you will be presented with when making color selections in the interface color preference panels. By default, both are on. One is a standard <b>BColorControl</b> the other is my homemade roColour (check out:&nbsp<a href="http://www.rodesign.com">http://www.rodesign.com</a>) Colorwell. You may have either or both on, of course, if you have neither on, you will have no controls for color selection--a dumb move!
+<p>
+<center>
+<H1><FONT SIZE=8>T</FONT>he <FONT SIZE=8>F</FONT>ont <FONT SIZE=8>P</FONT>reference <FONT SIZE=8>P</FONT>anel
+</B></I></TT></center></center>
+<P>
+<IMG SRC="Preferences/fontPanel.jpg">
+<P>
+The font preference panel gives access to all the font specific controls. The first two buttons, "Bigger Font" and "Smaller Font" give rapid access to minor size changes, each button selection changes the font by a single whole unit (fonts are scaled in "points", and can be in decimal fractions, like 15.3).<br>
+<P>
+Next comes a floating point entry gadget which allows you very exacting control over font point size. Currently this gadget is checked to make sure that you do not set it to zero or less, and has an artificial upper limit of 51000. If anyone finds this upper limit restrictive, the code in <b>fontPrefWindow.cpp's</b> function <b>ResetFontSize()</b> (see <a href="../../fontPrefWindow.cpp"><Font SIZE = 4>fontPrefWindow.cpp</FONT></a>) may be easily changed to allow larger sizes.<br><P> The next item is a checkbox which lets you turn the <a href="FontDisplayPanel.html"><Font SIZE = 4>Font Display Panel</FONT></a> on or off. The font display panel is there for reference, so you may view the font of your choice in it's selected size. It may well be hidden behind the font preference panel when the default settings are in effect. Drag it out from behind to better view your results.<br>
+<P>
+The next two items are pop up menus which allow you to set the font family (from the <FONT SIZE=5 COLOR = "#0000FF"><U>B</U></FONT><FONT SIZE=5 COLOR = "#FF0000"><U>e</U></FONT><FONT SIZE=5>OS</FONT>'s internal list of available fonts), and it's style. Selecting a family will automatically change the style list to that of the family selected. If the previous family's selected style is not supported, the family's idea of what is the "most regular" style is used.<br>
+<P>
+The last item is a checkbox for anti-aliasing. Some fonts and/or color schemes might look best when <b>not</b> anti-aliased. Try both values and watch the results in the <a href="FontDisplayPanel.html"><Font SIZE = 4>Font Display Panel</FONT></a>. Sometimes it takes the <b>Magnifier</b> application to tell the difference.
+<p>
+The font display panel is there only as a reference. It just prints the English alphabet in minuscule and majuscule plus the decimal digits.
+<p>
+<center>
+<H1><FONT SIZE=8>An Example Gadget Panel
+</B></I></TT></center></center>
+<P></B></I></TT>
+<P>
+<IMG SRC="Preferences/GadgetSpecificPanel/example.gif">
+<p>
+This is an example <b>MyStatusBar</b> panel and gives you a good idea of how things look. Notice the example status bar in the top right corner. Each specific gadget panel has an example of the gadget in this location. Playing with the controls will change this example gadget in real-time.
+<p>
+<center><b>Where is all this preference information stored?</b></center>
+<p>
+<FONT SIZE=5 COLOR="#FF">B</FONT><FONT COLOR="#FF0000" SIZE = 4 >e<FONT COLOR="#FF00FF" SIZE = 5>GUI</i></FONT><FONT COLOR = "0"> uses <b>libprefs</b> by Jon Watte to store preference data. There is one global <FONT SIZE=5 COLOR="#FF">B</FONT><FONT COLOR="#FF0000" SIZE = 4 >e<FONT COLOR="#FF00FF" SIZE = 5>GUI</i></FONT><FONT COLOR = "0"> preference directory created in <b>/boot/home/config/settings</b> called <b>_LP_x-EFM5.BeGUIPref</b> in which all global <FONT SIZE=5 COLOR="#FF">B</FONT><FONT COLOR="#FF0000" SIZE = 4 >e<FONT COLOR="#FF00FF" SIZE = 5>GUI</i></FONT><FONT COLOR = "0"> settings are stored. Each application will create it's own directory in <b>/boot/home/config/settings</b> with a name like <b>_LP_x-EFM5.PrefsEDgar</b> in which all application specific data is stored. <FONT SIZE=5 COLOR="#FF">B</FONT><FONT COLOR="#FF0000" SIZE = 4 >e<FONT COLOR="#FF00FF" SIZE = 5>GUI</i></FONT><FONT COLOR = "0"> has all the default settings built in, so you may delete the file <b>/boot/home/config/settings/_LP_x-EFM5.BeGUIPref</b> if you make your preferences so interesting that they are abhorent!
+
+</UL>
+<hr>
+<i><FONT SIZE = 6>T</FONT>he <FONT SIZE = 6 COLOR="#FF">B</FONT><FONT COLOR="#FF0000" SIZE = 5 >e<FONT COLOR="#FF00FF" SIZE = 6>GUI
+</FONT><FONT SIZE = 6 COLOR="#FF">B</FONT><FONT COLOR="#FF0000" SIZE = 5 >ook</FONT></i><FONT COLOR = "0"></i>
+<p></i>
+for version 1.4.2<br>
+Copyright &copy; 1998-1999 Ed Musgrove <FONT COLOR="#0000FF"><U>B</U></FONT><FONT COLOR="#FF0000"><U>e</U></FONT><FONT COLOR="#00"> Developer #2076.  All rights reserved.<br>
+<a href="mailto:edgar@harbornet.com">edgar@harbornet.com</a><br>
+<a href="mailto:emusgrov@linknet.kitsap.lib.wa.us">emusgrov@linknet.kitsap.lib.wa.us</a><br>
+Last modified March 17, 1999.
+</body>
+</html>
+

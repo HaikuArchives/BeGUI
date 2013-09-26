@@ -1,0 +1,90 @@
+<HTML><HEAD>
+<TITLE>The MyTextView Class</TITLE>
+</HEAD><BODY BGCOLOR = #FFFFFF> <P>
+<P>
+</B></I></TT>
+<center>
+<H1><FONT SIZE=8>T</FONT>he <FONT SIZE=8>M</FONT>yTextView <FONT SIZE=8>C</FONT>lass
+</B></I></TT></center></center>
+<HR>
+<P>
+<UL>
+<FONT SIZE = 3>
+<P>
+Derived from:&nbsp<b>BTextView</b><br>
+<P>
+</B>Declared in:  <B><a href="../../../myTextView.h"><Font SIZE = 4>myTextView.h</FONT></A>
+<P>
+</B>Library:  <B>libBeGUI.so
+<P>
+</B><HR>
+<H2><A NAME=""><FONT SIZE=6>O</FONT>verview</A></H2>
+<P>
+<H6><A HREF="MyTextViewSummary.html">[method summary]</A></H6>
+</B></I></TT>
+<P>
+<Font SIZE = 4>The MyTextView Class</FONT> is used as a simple (or not so simple) multi-line text entry box. It is a wrapper for the <FONT SIZE=5 COLOR = "#0000FF"><U>B</U></FONT><FONT SIZE=5 COLOR = "#FF0000"><U>e</U></FONT><FONT SIZE=5>OS</FONT> <b>BTextView</b> class.
+<p>
+
+<HR>
+<H3><A NAME="MyTextView()">MyTextView()</A></H3>
+<P>
+<UL>MyTextView(const char * paramName,<br>
+<UL>const char * paramText,<br>
+float paramMaxWidth,<br>
+float paramMaxHeight,<br>
+LayoutMatrix * paramLayoutMatrix);<br>
+</UL>
+<P>
+This is the constructor. The parameter <b>paramName</b> is passed on to the <b>BTextView</b>. The parameter <b>paramText</b> is the text with which the gadget initially opens (it may be NULL).
+<p>
+<P>
+The third and next parameters, <b>paramMaxWidth</b> and <b>paramMaxHeight</b> control the width and height of the text box.
+<p>
+<P>
+The parameter <b>paramLayoutMatrix</b> is the <A HREF="../LayoutMatrix.html">LayoutMatrix</A> to which this gadget will be attached.
+<p>
+<P>
+There is a bit of code in this CTOR, it most all deals with text, filling the box and setting the style, size and color. The text entry region is limited to not being resizable, as doing so could cover up other gadgets.
+<p>
+</UL>
+<HR>
+<H3><A NAME="~MyTextView()">~MyTextView()</A></H3>
+<P>
+<UL>~MyTextView();
+<P>
+This is the destructor. It does nothing.
+<p>
+</UL>
+<HR>
+<H3><A NAME="AttachedToWindow()">AttachedToWindow()</A></H3>
+<P>
+<UL>void AttachedToWindow(void);
+<P>
+This just overrides the <b>BTextControl</b> method to provide color control, it calls the inherited version.
+<p>
+</UL>
+<HR>
+<H3><A NAME="MyGetPreferredSize()">MyGetPreferredSize()</A></H3>
+<P>
+<UL>void MyGetPreferredSize(float * paramWidth,<br>
+<UL>float * paramHeight)
+</UL>
+<P>
+The <b>BTextView</b> class's method <b>GetPreferredSize()</b> has some problems, so I have provided a replacement which works for my needs.
+<P></UL></UL>
+<hr>
+<br>
+<br>
+</UL>
+<i><FONT size=6>T</FONT>he <FONT size=6 COLOR="#FF">B</FONT><FONT COLOR="#FF0000" size=5 >e<FONT COLOR="#FF00FF" size=6>GUI
+</FONT><FONT size=6 COLOR="#FF">B</FONT><FONT COLOR="#FF0000" size=5 >ook</FONT></i><FONT COLOR = "0"></i>
+<p></i>
+for version 1.4.2<br>
+Copyright &copy; 1998-1999 Ed Musgrove <FONT COLOR="#0000FF"><U>B</U></FONT><FONT COLOR="#FF0000"><U>e</U></FONT><FONT COLOR="#00"> Developer #2076.  All rights reserved.<br>
+<a href="mailto:edgar@harbornet.com">edgar@harbornet.com</a><br>
+<a href="mailto:emusgrov@linknet.kitsap.lib.wa.us">emusgrov@linknet.kitsap.lib.wa.us</a><br>
+Last modified March 17, 1999.
+</body>
+</html>
+

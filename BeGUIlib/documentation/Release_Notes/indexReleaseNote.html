@@ -1,0 +1,141 @@
+<HTML><HEAD>
+<TITLE>
+Developer Release Notes
+</TITLE>
+</HEAD><BODY BGCOLOR='#eeeeee'>
+<FONT SIZE = 3>
+<HR>
+<center>
+<FONT SIZE=5 ><b><u>Developer Release Notes</FONT></u>
+<br>
+<i><FONT SIZE=7 COLOR="#FF">B</FONT><FONT COLOR="#FF0000" SIZE = 6 >e<FONT COLOR="#FF00FF" SIZE = 7>GUI</i></FONT><FONT COLOR = "0"><br>
+<FONT SIZE=6 >version <i>1.4.2</FONT></i></b>
+<br>
+<FONT SIZE=5 >for</FONT>
+<br>
+<i><FONT SIZE=6 COLOR="#0000FF"><U>B</U></FONT><FONT SIZE=5 COLOR="#FF0000"><U>e</U></FONT><FONT SIZE=6>OS Release 4</FONT></i></b>
+</center>
+<HR>
+<P>
+<FONT SIZE = 6><b>
+While this documentation is copyright, anyone is free to redistribute it as long as they do not change the fundamental text. Changes to the HTML coding are fine, as is any removal of the HTML code, or any re-formatting to fit other distribution styles or formats.</b></FONT><br>
+<p>
+<HR>
+<P>
+This document is the fifth major documentation release for <i><FONT SIZE=5 COLOR="#FF">B</FONT><FONT COLOR="#FF0000" SIZE = 4 >e<FONT COLOR="#FF00FF" SIZE = 5>GUI</i></FONT><FONT COLOR="#00">.</i>
+<p>
+<CENTER>
+<FONT size = 5><b>Things are still under construction!</FONT></b><br></CENTER></i><br>
+<br>
+New changes are listed toward the bottom of this page.<br>
+<br>
+<FONT COLOR = "ff0000"><b>New changes for 1 . 3 . 0 have been drastic and major! This will require a lot of changes to source code for anyone using this library. I felt that now was the time to make these changes, not later when more code might be dependant upon them.</b></FONT><FONT COLOR = "00"><br>
+<br>
+<FONT COLOR = "ff0000"><b>Changes for 1 . 1 . 1</b></FONT><FONT COLOR = "00"><br><UL>
+A major improvement in source code creation has taken place. In earlier versions of these routines it was necessary to create a LayoutMatrixItem for each gadget. Sometimes the LayoutMatrixItem had to be created with new (and eventually deleted), other times the use of an auto-pointer was better. Now these LayoutMatrixItems are created automatically for you and deleted when appropriate.<br>
+<br>
+I have defined a spacer class. It's documentation is with the other gadgets in the Layout/Gadgets folder.<br>
+<br>
+I got fed up with the massive waste of space in default <b>BButtons</b>, so as hinted in earlier code, I added a MyGetPreferredSize() method to this class as well.<br>
+<br>
+I ripped the preference strings out of the resources. Now there are two sets of string resources, those dedicated to preferences may be found in the file BeGUIStrings.r.<br>
+<br>
+I have separated the preference storage stuff from the app storage stuff as well. I am now passing a <b>const char * prefSig</b> into each window, so it knows which prefs it should store itself into. This results in two folders being created in /boot/home/config/settings!<br>
+<br>
+I am also working on the <b>BSlider</b> class and have it working in a beta layout routine, but have entered a bug report against it and am awaiting the outcome of that before I go too far.<br>
+<br>
+I have looked at the <b>BTabView</b> class with the thought of supporting it as well, but have been unable to make heads or tails of it. If someone would like to send me a simple example of working code which employs this class, I will look further into the matter.<br>
+<br>
+I just realized that it would be nice to include the <b>BPicture</b> class in the layout routine, and am also thinking of the <b>BBitmap</b> class. Both would require only a tiny bit of code to support, as they do not require special sizing, being of a somewhat fixed nature. Of course, they are both really resizable, I guess, so I might have to give this some more thought!<br>
+<br>
+I also just grabbed the pot.zip example from the recent <b>BNewsletter</b> and may well enroll it in this layout routine. After examining the code I feel that it will be a bit complicated to include for the near future.<br>
+<br>
+Of course, it would be lovely to separate this all out from the application and form it into a custom library--so I did! Included with this project is a shared library libBeGUI.so, which can be created from the source by using the makefile.lib. The details for using the makefile are a bit complicated, if you need help, let me know.<br>
+<br>
+I found a little speed-up in source code generation. In the creation of the <b>LayoutMatrixItem</b> I passed a pointer to a <b>BList</b> which was a member of the <b>LayoutMatrix</b> to which the item was soon to become attached. Instead of finding the list like:<br>
+<b>layoutMatrix->itemList</b><br>
+Now, I simply pass the <b>LayoutMatrix</b> and get the list in the <b>CTOR</b>, saves a tiny bit of typing for each item.<br>
+<br>
+I also found an un-used member of the <b>MyColorControl</b> class. I removed it by commenting it out in the code; not sure if I will need it for slider updating, have to see. See:&nbsp<b>BWindow</b> * paramWindow<br>
+<br>
+I also pruned a bunch of excess strings from the resource source and the code. There are still a lot of unused strings, some pertaining to things I am in the process of building.<br>
+<br>
+I found some math problems in my handling of <b>MyPopUpMenu</b> labels and their vertical and horizontal positions with respect to the menu. I have this mostly corrected now, but will have to look at the difference when the menu font is much larger or smaller than the label font.<br>
+<br>
+I found I had neglected to finish the proportional slider stuff for height! Found a little bug in the Display Font Window calls.<br>
+<br>
+Found a major problem with my previous usage of libprefs. I was rapidly calling it to write data if many Preference panels were automatically closed. It would get lost, so I made it all into a sequential call.<br>
+<br>
+Found a nagging bug which caused a crash under some situations if the Font Display Window had been closed.<br>
+<br>
+I found a few enhancements which make the windows more agressively usable. One allows for the rare occaision when you want no menu (as in a tool palette) the other allows for no title string (as you might want for a minimally intrusive tool palette). I also found a better way of storing window frame prefs. Make sure you delete any of the old BeGUI preference files in <b>/boot/home/config/settings</b>.<br>
+<br>
+After reading the thread on BexxxTalk about virtual destructors, I thought I had better re-examine my thoughts on inheritance, so I went in and made all BeGUI class destructors virtual, as well as a few functions which might need to be virtual.<br>
+<br>
+I found an interesting bug in the LayoutMatrix::Calc() method. I had failed to re-zero the excessBottom and excessRight variables, so if a smaller gadget was at the end of a matrix row or column it would cause a visual glitch.<br>
+<br></UL>
+<FONT COLOR = "ff0000"><b>Changes for 1 . 2 . 0</b></FONT><FONT COLOR = "00"><br><UL>
+Version 1.2.0 brings a major change in the <b>UInt32Gadget</b> and <b>FloatGadget</b>! The originals have been replaced by totally font sensitive versions, the old classes are still there, but their names have changed to <b>UInt32Control</b> and <b>FloatControl</b>, which reflects the fact that both are based upon the  <b>BTextControl</b> class. The new versions are based upon the <b>BTextView</b> class which allows them to be completely font sensitive. They are joined by a host of additional classes such as <b>Int8Gadget</b>, <b>UInt16Gadget</b>, etc..<br>
+<br>
+I made the construction of <b>ColorWells</b> a bit simpler. I moved the creation of the label's <b>TextItem</b> into the <b>ColorWell</b> CTOR initilization list. Thus you now pass in a <b>const char *</b> instead of a <b>TextItem *</b>.<br>
+<br></UL>
+<FONT COLOR = "ff0000"><b>Changes for 1 . 3 . 0</b></FONT><FONT COLOR = "00"><br><UL>
+In the spirit of the above change, I made all the gadget labels (<b>ColorWell</b>, <b>StringGadget</b>, <b>MyPopUpMenu</b> and <b>FloatGadget</b> as well as all other numeric entry gadgets) <b>BStringViews</b> constructed from <b>BStrings</b> in each one's CTOR. You may now safely pass in NULL for this <b>const char *</b> and the item will be created with no label. This way you may set the label's <b>ResizingMode()</b> so that it will stick with the gadget if the gadget has a resizing mode to B_FOLLOW_something.<br>
+<br>
+I made some major changes in the <b>WindowGuts</b> class, it is now the <b>ScrollingWindow</b> class and has a different CTOR parameter list. The two big changes are that the menu is now optional and that you may specify if the window will be <b>Show()</b>ed automatically by the <b>Initialize()</b> method. If it is not <b>Show()</b>ed, you may make additional changes off-screen and call <b>Show()</b> when you are ready.<br>
+<br>
+A second window class <b>SimpleWindow</b> is now available. It is a very plain window and only inherits the automatic preference facility of storing size and location. It is especially well adapted to functioning with Brian Teitz' Santa's Gift Bag library. It is not aware of the <b>LayoutMatrix</b> class, so will not be used for the creation of <b>LayoutMatrixItem BeGUI</b> gadget classes.<br>
+<br>
+I created a third window class <b>BaseWindow</b> which mimics the <b>ScrollingWindow</b>in it's ability to accept a <b>LayoutMatrix</b>, but lacks the <b>BScrollView</b> base. This window is sized by the library initially, and the user controls the display size. It's major use is to create simple, font sensitive non-scrolled windows with only a few gadgets--displays which are expected to be completely viewable at even the smallest screen size, with the largest reasonable font, in any language.<br>
+<br>
+The numeric entry gadgets have been enhanced with a set of filters which help limit them to appropriate entry values.<br>
+<br>
+<b>ColorWells</b> have now become user sizable and need no longer be square. The <b>ColorWell</b> preference window now has two <b>FloatGadgets</b> which allow the user to set suitable width and height for the gadget.<br>
+<br>
+The main preference window has had new buttons added which access a bunch of new preference windows controlling the new numeric gadgets. I can see that if I keep adding more gadgets this button array might become ugly. I may need to separate this into pop up menus.<br>
+<br>
+In my ongoing effort to standardize the code, I have made a lot of major "spelling" changes to class members. <b>pMenuBar</b> has become <b>mpMenuBar</b>, <b>underViewWidth</b> has become <b>mfUnderViewWidth</b>, etc.. All classes have been standardized in this fashion. I also re-arranged all the classes so that data members come before member methods and all data members are in some semblence of order starting with pointers, then basic types in size order (largest to smallest), then complext types (classes).<br>
+<br>
+I went ahead and added the <b>BSlider</b> class, even though there may still be some problems with it.<br>
+<br>
+I refined the construction of the <b>RadioViewData</b> structure, making it a full fledged class with parameters for the CTOR. This will eliminate two statements for every <b>RadioViewData</b> created.
+</UL><br>
+<FONT COLOR = "ff0000"><b>Changes for 1 . 3 . 1</b></FONT><FONT COLOR = "00"><br><UL>
+I added colorization back to <b>MyStringDrawer</b>--don't know why I ever took it out, but at least now I have a much better way of doing it and old code will not need to be changed.
+</UL><br>
+<FONT COLOR = "ff0000"><b>Changes for 1 . 4 . 2</b></FONT><FONT COLOR = "00"><br><UL>
+I did major cleanup of the <b>LayoutMatrix</b> and <b>LayoutMatrixItem</b> classes. I also combined a lot of the numeric gadget features into a <b>BaseGadget</b> class which considerably improves the size of the library. I also spent a lot of time getting the library UTF8 text sensitive and replaced all font measurements with the new bounding box stuff.<br>
+<br>
+There is an unfinished and undocumented <b>HexGadget</b>, it excludes all non-hex text, but does no limit testing nor does it convert the text string into a numeric value.<br>
+<br>
+The documentation included is a bit out of date. Many classes have had the order of their parameters changed and default values added where reasonable. These changes may not be completely or correctly reflected by the documentation--check the headers when in doubt!
+</UL><br>
+<hr>
+<br><FONT SIZE = 6>
+roColour drops come from one of the finest programs on any computer platform <FONT COLOR = "112299"><B>roColour 3.0 Web Edition</FONT></b><FONT SIZE = 6>, brought to you by the nice folks at <FONT COLOR = "112299"><B>RO DESIGN, Inc.</FONT></b> <a href="http://www.rodesign.com"><FONT SIZE = 4>www.rodesign.com</FONT></a>.<FONT SIZE = 6> I especially wish to thank <FONT SIZE = 7 COLOR = "881599"><b>Richard Oesterreicher</FONT></b><FONT SIZE = 6 COLOR = "00"> for bringing this program to the <FONT COLOR="#0000FF"><U>B</FONT><FONT COLOR="#FF0000"><U>e</U></FONT></U><FONT COLOR = "0">OS.<br>
+<p>
+<hr>
+<br>
+<br><FONT SIZE = 6>
+I also wish to thank <FONT SIZE = 7 COLOR = "881599"><B>Joseph Arnold, Daniel Berlin, John Dance, Chris Herborth and Stephen van Egmond</FONT></b><FONT SIZE = 6 COLOR="#000000"> for beta testing, help with the shared library problems and the move to x86 compatibility!<br>
+<br>
+<CENTER><FONT SIZE = 8 COLOR = "00ff00"><b>Thanks!</b></FONT></CENTER>
+<HR>
+<br>
+<P><FONT SIZE = 5 COLOR = "00">
+The <FONT SIZE = 6 COLOR="#0000FF"><U>B</U><FONT COLOR="#FF0000"><U>e</U>OS<FONT SIZE = 5 COLOR = "00"> Release 4 is brought to you by all the hard work of the super people at <FONT SIZE=6 COLOR="#0000FF"><U>B</U><FONT COLOR="#FF0000"><U>e</U><FONT COLOR="#00">, Inc. (<a href="http://www.be.com"><FONT SIZE = 4 COLOR = "0000FF">www.be.com</a><FONT SIZE=5 COLOR = "00">). <FONT COLOR="#0000FF"><U>B</U><FONT COLOR="#FF0000"><U>e</U><FONT COLOR="#00"> and <FONT COLOR ="#0000FF"><U>B</U><FONT COLOR="#FF0000"><U>e</U>OS<FONT COLOR="#00"> are registered trademarks of <FONT COLOR="#0000FF"><U>B</U><FONT COLOR="#FF0000"><U>e</U><FONT COLOR="#00">, Inc..</FONT><br>
+<p>
+<br>
+<HR>
+<br>
+</UL>
+<i><FONT SIZE = 6>T</FONT>he <FONT SIZE = 6 COLOR="#FF">B</FONT><FONT COLOR="#FF0000" SIZE = 5 >e<FONT COLOR="#FF00FF" SIZE = 6>GUI
+</FONT><FONT SIZE = 6 COLOR="#FF">B</FONT><FONT COLOR="#FF0000" SIZE = 5 >ook</FONT></i><FONT COLOR = "0"></i>
+<p></i>
+for version 1.4.2<br>
+Copyright &copy; 1998-1999 Ed Musgrove <FONT COLOR="#0000FF"><U>B</U></FONT><FONT COLOR="#FF0000"><U>e</U></FONT><FONT COLOR="#00"> Developer #2076.  All rights reserved.<br>
+<a href="mailto:edgar@harbornet.com">edgar@harbornet.com</a><br>
+<a href="mailto:emusgrov@linknet.kitsap.lib.wa.us">emusgrov@linknet.kitsap.lib.wa.us</a><br>
+Last modified March 17, 1999.
+</body>
+</html>

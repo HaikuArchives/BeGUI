@@ -1,0 +1,88 @@
+<HTML><HEAD>
+<TITLE>The MyRadioView Class</TITLE>
+</HEAD><BODY BGCOLOR = #FFFFFF> <P>
+<P>
+</B></I></TT>
+<center>
+<H1><FONT SIZE=8>T</FONT>he <FONT SIZE=8>M</FONT>yRadioView <FONT SIZE=8>C</FONT>lass
+</B></I></TT></center></center>
+<HR>
+<P>
+<UL>
+<FONT SIZE = 3>
+<P>
+Derived from:&nbsp<b>BView</b><br>
+<P>
+</B>Declared in:  <B><a href="../../../myRadioView.h"><Font SIZE = 4>myRadioView.h</FONT></A>
+<P>
+</B>Library:  <B>libBeGUI.so
+<P>
+</B><HR>
+<H2><A NAME=""><FONT SIZE=6>O</FONT>verview</A></H2>
+<P>
+<H6><A HREF="MyRadioViewSummary.html">[method summary]</A></H6>
+</B></I></TT>
+<P>
+<Font SIZE = 4>The MyRadioView Class</FONT> provides a container for <b>BRadioButtons</b>.
+<p>
+
+<HR>
+<H3><A NAME="MyRadioView()">MyRadioView()</A></H3>
+<P>
+<UL>MyRadioView(const char * paramName, <br>
+<UL>bool paramVertical,<br>
+BList * paramList,<br>
+BFont * paramFont,<br>
+LayoutMatrix * paramLayoutMatrix);<br>
+</UL>
+<P>
+This is the constructor. The first parameter <b>paramName</b>, is passed directly on to the base class <b>BView</b>.<br>
+<p>
+The parameter <b>paramVertical</b> is <i>true</i> if the buttons go up and down, <i>false</i> if they go from side to side.<br>
+<P>
+The parameter <b>paramList</b> contains a <b>BList</b> of <b>BRadioButtons</b> to attach to this view.
+<p>
+The parameter <b>paramFont</b> is the font used for the buttons.
+<p>
+The parameter <b>paramLayoutMatrix</b> is the <A HREF="../LayoutMatrix.html">LayoutMatrix</A> to which this gadget will be attached.
+<p>
+</UL>
+<HR>
+<H3><A NAME="~MyRadioView()">~MyRadioView()</A></H3>
+<P>
+<UL>~MyRadioView();
+<P>
+This is the destructor. It does nothing.<br>
+<p>
+</UL>
+<HR>
+<H3><A NAME="Initialize()">Initialize()</A></H3>
+<P>
+<UL>bool Initialize(void);
+<P>
+This is the real workhorse of construction. It takes <b>RadioViewData</b> items from the parameter <b>BList paramList</b> and creates <b>BRadioButtons</b> with the information from them. Then it adds the <b>BRadioButtons</b> to the contained <b>BRadioView</b>. It then performs all the font tricks required to present the radio button set. It also calculates the needed sizes for the view.
+<p>
+</UL>
+<HR>
+<H3><A NAME="AttachedToWindow()">AttachedToWindow()</A></H3>
+<P>
+<UL>void AttachedToWindow( void);
+<P>
+This just overrides the <b>BRadioView</b> method to provide color control, it calls the inherited version.
+<p>
+<P></UL></UL>
+<hr>
+<br>
+<br>
+</UL>
+<i><FONT size=6>T</FONT>he <FONT size=6 COLOR="#FF">B</FONT><FONT COLOR="#FF0000" size=5 >e<FONT COLOR="#FF00FF" size=6>GUI
+</FONT><FONT size=6 COLOR="#FF">B</FONT><FONT COLOR="#FF0000" size=5 >ook</FONT></i><FONT COLOR = "0"></i>
+<p></i>
+for version 1.4.2<br>
+Copyright &copy; 1998-1999 Ed Musgrove <FONT COLOR="#0000FF"><U>B</U></FONT><FONT COLOR="#FF0000"><U>e</U></FONT><FONT COLOR="#00"> Developer #2076.  All rights reserved.<br>
+<a href="mailto:edgar@harbornet.com">edgar@harbornet.com</a><br>
+<a href="mailto:emusgrov@linknet.kitsap.lib.wa.us">emusgrov@linknet.kitsap.lib.wa.us</a><br>
+Last modified March 17, 1999.
+</body>
+</html>
+

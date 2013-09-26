@@ -1,0 +1,104 @@
+<HTML><HEAD>
+<TITLE>The SimpleWindow Class</TITLE>
+</HEAD><BODY BGCOLOR = #FFFFFF> <P>
+<P>
+</B></I></TT>
+<center>
+<H1><FONT SIZE=8>T</FONT>he <FONT SIZE=8>S</FONT>impleWindow <FONT SIZE=8>C</FONT>lass
+</B></I></TT></center></center>
+<HR>
+<P>
+<UL>
+
+<P><FONT SIZE = 3>
+Derived from:&nbsp<b>BWindow</b><br>
+<P>
+</B>Declared in:  <B><a href="../../simpleWindow.h"><Font SIZE = 4>simpleWindow.h</FONT></A>
+<P>
+</B>Library:  <B>libBeGUI.so
+<P>
+</B><HR>
+<H2><A NAME=""><FONT SIZE=6>O</FONT>verview</A></H2>
+<P>
+<H6><A HREF="SimpleWindowSummary.html">[method summary]</A></H6>
+</B></I></TT>
+<P>
+<Font SIZE = 4>The SimpleWindow Class</FONT> is a <b>BWindow</b> wrapper class.  It knows nothing about <a href="LayoutMatrix.html"><Font SIZE = 4>LayoutMatrices</FONT></A> and <a href="LayoutMatrixItem.html"><Font SIZE = 4>LayoutMatrixItems</FONT></A>, so is only suited to very simple window creation. It recalls it's past position, so it will return to where you last put it.
+<p>
+
+<HR>
+<H3><A NAME="SimpleWindow()">SimpleWindow()</A></H3>
+<P>
+<UL>SimpleWindow(<b>BRect</b> paramBound,<br>
+<UL>const char * paramWindowTitle,<br>
+const char * paramNamePrefFrame,<br>
+PreferenceSet *	paramPreferenceSet,<br>
+bool paramHasMenu = <i>true</i>,<br>
+bool paramShowInInit = <i>true</i>);
+</UL>
+<P>
+This is the constructor. The parameter <b>paramBound</b>, lets the window know where to put itself on screen.  This value is stored by the preference routine (see  <a href="Preferences.html"><Font SIZE = 4>Preferences</FONT></A>) and you ask preferences for this value and pass it in as a parameter.
+<p>
+<P>
+The parameter <b>paramWindowTitle</b> is the title which will display in the window's title tab. The window will try it's best to size itself to accommodate the length of the title, but will never exceed the maximum width of the screen.
+<p>
+<P>
+The parameter <b>paramNamePrefFrame</b> is used by preferences to identify this window's stored data. It <b>must be</b> unique across all the application's windows.
+<p>
+<P>
+The parameter <b>paramPreferenceSet</b> is used to declare in which preference file this window's frame will  be stored. If this is an internal BeGUI library preference window, you pass in the libBeGUI.so <b>PreferenceSet</b>, otherwise you pass in the application's <b>PreferenceSet</b>.
+<p>
+<P>
+The parameter <b>paramHasMenu</b> defaults to <i>true</i>, as most windows should have at least an about menu item.  In rare situations the developer might want a window with no menu. In these cases the internal code must know not to take menu height into account. Set this parameter to <i>false</i> if you attach no menu to the window.
+<p>
+<P>
+The parameter <b>paramShowInInit</b> defaults to <i>true</i>, as most windows should have all design work completed during the <b>Initialize()</b> method.  In some situations the developer might want to modify a window off-screen before it is <b>Show()</b>ed. Set this parameter to <i>false</i> if you need to adjust the window before <b>Show()</b>ing it.
+<p>
+</UL>
+<HR>
+<H3><A NAME="~SimpleWindow()">~SimpleWindow()</A></H3>
+<P>
+<UL>~SimpleWindow();
+<P>
+This is the destructor. It just deletes the scroll view name.
+<p>
+</UL>
+<HR>
+<H3><A NAME="Initialize()">Initialize()</A></H3>
+<P>
+<UL>bool Initialize(void);
+<P>
+This is the work horse of the class construction. It attaches it's menu (if it has one) and stores it's height. It then checks the stored <b>bool</b> to see if it should <b>Show()</b> itself.
+<p>
+</UL>
+<HR>
+<H3><A NAME="QuitRequested()">QuitRequested()</A></H3>
+<P>
+<UL>bool QuitRequested(void);<br>
+<P>
+This  overrides the normal <b>BWindow</b> version and calls it inherited version if everything is normal. The window's preferred size and location are stored.
+<p>
+</UL>
+<HR>
+<H3><A NAME="MessageReceived()">MessageReceived()</A></H3>
+<P>
+<UL>void MessageReceived(BMessage * paramMessage);<br>
+<P>
+This  overrides the normal <b>BWindow</b> version and calls it inherited version. You will also override this version in any derived class to get that window's specific messages, calling this version in your derived class for any messages you do not handle.
+<p>
+<P></UL></UL>
+<hr>
+<br>
+<br>
+</UL>
+<i><FONT size=6>T</FONT>he <FONT size=6 COLOR="#FF">B</FONT><FONT COLOR="#FF0000" size=5 >e<FONT COLOR="#FF00FF" size=6>GUI
+</FONT><FONT size=6 COLOR="#FF">B</FONT><FONT COLOR="#FF0000" size=5 >ook</FONT></i><FONT COLOR = "0"></i>
+<p></i>
+for version 1.4.2<br>
+Copyright &copy; 1998-1999 Ed Musgrove <FONT COLOR="#0000FF"><U>B</U></FONT><FONT COLOR="#FF0000"><U>e</U></FONT><FONT COLOR="#00"> Developer #2076.  All rights reserved.<br>
+<a href="mailto:edgar@harbornet.com">edgar@harbornet.com</a><br>
+<a href="mailto:emusgrov@linknet.kitsap.lib.wa.us">emusgrov@linknet.kitsap.lib.wa.us</a><br>
+Last modified March 17, 1999.
+</body>
+</html>
+

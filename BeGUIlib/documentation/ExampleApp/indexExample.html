@@ -1,0 +1,58 @@
+<HTML><HEAD>
+<TITLE>The Example Application</TITLE>
+</HEAD><BODY BGCOLOR=#FFFFFF>
+<P>
+
+<CENTER>
+<H1><FONT SIZE=6>T</FONT>he <FONT SIZE=6>E</FONT>xample <FONT SIZE=6>A</FONT>pplication<br>
+<i><FONT SIZE=10 COLOR="AA0000">T</FONT></i><FONT SIZE=7>ool</FONT><FONT  SIZE=10 COLOR="AA0000"><i>B</FONT></I><FONT SIZE=7>ox2</FONT><FONT COLOR="0"><br>
+a non-functional GUI text editor</CENTER></h1>
+
+<HR>
+<P>
+<UL>
+<FONT SIZE = 3>
+
+
+</B></I></TT>
+<P>
+<TABLE>
+<TR><TD></TD>
+<TD VALIGN=TOP><IMG SRC="../art/featureBullet.gif"></TD>
+<TD><a href="../indexProgrammerGuide"><FONT SIZE = 4>Go up a level</FONT></a>
+</TD>
+</TR>
+</B></I></TT>      </PRE></TABLE></UL></MENU></B></I></TT>
+<P>
+<center><FONT SIZE = 6>Getting Started</FONT></center>
+<FONT COLOR="FF0000"><b>Note:&nbsp</b></b><FONT COLOR="00">
+Two new directories full of preference data will be created by this application. They will be found in /boot/home/config/settings, one is called <b>_LP_x-EFM5.ToolBox2</b>, the other <b>_LP_x-EFM5.BeGUIPref</b>. If you get your preferences totally unacceptably messed up, simply quit the application, delete these files and start the application up again. The default preferences will be restored.
+<p>
+<P>
+ToolBox2 is a demonstration application using BeGUI, which has now become a shared library for both PPC and x86. It does nothing except open two windows, when you close the mock-editor window the application quits. The other window is a mock-tool palette window, try setting the button sizes and watch the tool palette adjust to fit. Try out the preference menus, move the windows around to new locations, quit then re-run ToolBox2.
+<p>
+<P>
+If you select the "Preferences..." menu item you will access a panel where there are fourteen buttons which allow you to customize the appearance of the primary <FONT SIZE=4 COLOR="#0000FF"><U>B</U></FONT><FONT COLOR="#FF0000"><U>e</U></FONT><FONT >OS</FONT> controls. The only <b>Be Interface</b> Kit controls not present here are the Tab and the Slider. I have the slider working, but am awaiting the results of a bug report before including it in a release. The Tab stuff escapes me completely, as I have not figured out how to make them work at all! Each button opens a new window with a control panel specific to the gadget in question. Each gadget is represented by a demonstration item so you may watch the results of your actions in real time.
+<p>
+<P>
+Playing with colors is interesting and you may learn a lot about the way controls are created just by changing a color (View, High, or Low) and watching how it affects the item. Some Item's colors are based upon the "Underlying View"'s colors, so play with it as well. You can easily make things unreadable with color changes! See the note above about restoring the defaults, when all else fails! There are two checkboxes which allow you to customize the control panels themselves. By default, both standard <FONT SIZE=4 COLOR="#0000FF"><U>B</U></FONT><FONT  COLOR="#FF0000"><U>e</U></FONT><FONT >OS</FONT> <b>BColorControls</b> and roColour   (check out:&nbsp<a href="http://www.rodesign.com"><FONT SIZE = 4>http://www.rodesign.com</FONT></a>) color drops are supported. There is a custom roColour color well which is sized according to the font size, you may drop roColours on them to affect color changes. You may have either or both gadgets active at any time.
+<p>
+<center><FONT SIZE = 6>Other Menu Items</FONT></center>
+There are a few other menu items available--a "Close Window" item (which performs the same function as the window's close gadget or the keyboard shortcut alt-w), and a "Quit" item which terminates the application (after a verification requester). All windows also should have an "About" item which opens a <b>BAlert</b> giving details about the application and specific hints about what is going on in this window.
+<p>
+<br>
+<br>
+</UL>
+<i><FONT SIZE = 6>T</FONT>he <FONT SIZE = 6 COLOR="#FF">B</FONT><FONT COLOR="#FF0000" SIZE = 5 >e<FONT COLOR="#FF00FF" SIZE = 6>GUI
+</FONT><FONT SIZE = 6 COLOR="#FF">B</FONT><FONT COLOR="#FF0000" SIZE = 5 >ook</FONT></i><FONT COLOR = "0"></i>
+<p></i><FONT COLOR = "0">
+for version 1.4.2<br>
+Copyright &copy; 1998-1999 Ed Musgrove <FONT COLOR="#0000FF"><U>B</U></FONT><FONT COLOR="#FF0000"><U>e</U></FONT><FONT COLOR="#00"> Developer #2076.  All rights reserved.<br>
+<a href="mailto:edgar@harbornet.com">edgar@harbornet.com</a><br>
+<a href="mailto:emusgrov@linknet.kitsap.lib.wa.us">emusgrov@linknet.kitsap.lib.wa.us</a><br>
+Last modified March 17, 1999.<br>
+Spheres of Influence is Copyright &copy, 1990-1998 Ed Musgrove. All rights reserved.<br>
+SoIEditor is Copyright &copy, 1998 Ed Musgrove. All rights reserved.<br>
+</body>
+</html>
+

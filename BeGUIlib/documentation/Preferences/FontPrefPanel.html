@@ -1,0 +1,41 @@
+<HTML><HEAD>
+<TITLE>The Font Preference Panel</TITLE>
+</HEAD><BODY BGCOLOR = #FFFFFF> <P>
+<P>
+</B></I></TT>
+<center>
+<H1><FONT SIZE=8>T</FONT>he <FONT SIZE=8>F</FONT>ont <FONT SIZE=8>P</FONT>reference <FONT SIZE=8>P</FONT>anel
+</B></I></TT></center></center>
+<HR>
+<P>
+<UL>
+<P><FONT SIZE = 3>
+The font preference panel gives access to all the font specific controls. The first two buttons, "Bigger Font" and "Smaller Font" give rapid access to minor size changes, each button selection changes the font by a single whole unit (fonts are scaled in "points", and can be in decimal fractions, like 15.3).<br>
+<P>
+Next comes a floating point entry gadget which allows you very exacting control over font point size. Currently this gadget is checked to make sure that you do not set it to zero or less, and has an artificial upper limit of 51000. If anyone finds this upper limit restrictive, the code in <b>fontPrefWindow.cpp's</b> function <b>ResetFontSize()</b> (see <a href="../../fontPrefWindow.cpp"><Font SIZE = 4>fontPrefWindow.cpp</FONT></a>) may be easily changed to allow larger sizes.<br><P> The next item is a checkbox which lets you turn the <a href="FontDisplayPanel.html"><Font SIZE = 4>Font Display Panel</FONT></a> on or off. The font display panel is there for reference, so you may view the font of your choice in it's selected size. It may well be hidden behind the font preference panel when the default settings are in effect. Drag it out from behind to better view your results.<br>
+<P>
+The next two items are pop up menus which allow you to set the font family (from the <FONT SIZE=5 COLOR = "#0000FF"><U>B</U></FONT><FONT SIZE=5 COLOR = "#FF0000"><U>e</U></FONT><FONT SIZE=5>OS</FONT>'s internal list of available fonts), and it's style. Selecting a family will automatically change the style list to that of the family selected. If the previous family's selected style is not supported, the family's idea of what is the "most regular" style is used.<br>
+<P>
+The last item is a checkbox for anti-aliasing. Some fonts and/or color schemes might look best when <b>not</b> anti-aliased. Try both values and watch the results in the <a href="FontDisplayPanel.html"><Font SIZE = 4>Font Display Panel</FONT></a>. Sometimes it takes the <b>Magnifier</b> application to tell the difference.
+<p>
+<P>
+<IMG SRC="fontPanel.jpg">
+<p>
+<p>
+<p>
+<p></UL></UL>
+<hr>
+<br>
+<br>
+</UL>
+<i><FONT size=6>T</FONT>he <FONT size=6 COLOR="#FF">B</FONT><FONT COLOR="#FF0000" size=5 >e<FONT COLOR="#FF00FF" size=6>GUI
+</FONT><FONT size=6 COLOR="#FF">B</FONT><FONT COLOR="#FF0000" size=5 >ook</FONT></i><FONT COLOR = "0"></i>
+<p></i>
+for version 1.4.2<br>
+Copyright &copy; 1998-1999 Ed Musgrove <FONT COLOR="#0000FF"><U>B</U></FONT><FONT COLOR="#FF0000"><U>e</U></FONT><FONT COLOR="#00"> Developer #2076.  All rights reserved.<br>
+<a href="mailto:edgar@harbornet.com">edgar@harbornet.com</a><br>
+<a href="mailto:emusgrov@linknet.kitsap.lib.wa.us">emusgrov@linknet.kitsap.lib.wa.us</a><br>
+Last modified March 17, 1999.
+</body>
+</html>
+
