@@ -1,0 +1,729 @@
+
+resource(1029, "AlphaNumeric") #'CSTR' array {
+	"ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 0123456789"
+	""
+};
+
+resource(1028, "GetHexGadgetLabel") "put hex here:";
+
+resource(1027, "buttonLabelsHexGadget") "HexGadget…";
+
+resource(1026, "cpWindowTitleHexGadget") "HexGadget Color Preferences";
+
+resource(1025, "PrefsNoSetHexGadgetViewColor") "Cannot set preferred Hex Gadget view color.";
+
+resource(1024, "PrefsNoSetHexGadgetLowColor") "Cannot set preferred Hex Gadget low color.";
+
+resource(1023, "PrefsNoSetHexGadgetHighColor") "Cannot set preferred Hex Gadget high color.";
+
+resource(1022, "FailHexGadget") "Could not create a new hexing point gadget.";
+
+resource(1021, "StringTooLongToMeasure") "String Too Long To Measure.";
+
+resource(1020, "FailReopen") "Cannot reopen display.";
+
+resource(1019, "PrefsNoSetCCLayout") "Cannot set preferred BColorControl layout style.";
+
+resource(1018, "CC_64x4_Cell") "64 x 4";
+
+resource(1017, "CC_32x8_Cell") "32 x 8";
+
+resource(1016, "CC_16x16_Cell") "16 x 16";
+
+resource(1015, "CC_8x32_Cell") "8 x 32";
+
+resource(1014, "CC_4x64_Cell") "4 x 64";
+
+resource(1013, "ColorControlKind") "BColorControl Style:";
+
+resource(1012, "PrefsNoSetMyBarColorSlider") "Cannot set preferred BSlider Color Bar";
+
+resource(1011, "FillCCLabel") "Bar Fill Color";
+
+resource(1010, "FillCWLabel") "Bar Fill roColour>";
+
+resource(1009, "FillSliderBarCBLabel") "Fill in BSlider bars ";
+
+resource(1008, "PrefsNoSetMyBarFillSlider") "Cannot set preferred BSlider Fill";
+
+resource(1007, "PrefsNoSetMyBarSliderColor") "Cannot set preferred BSlider Fill Color";
+
+resource(1006, "SliderBarFillColorLabel") "BSlider Bar Fill Color";
+
+resource(1005, "ColorSliderBarCBLabel") "Color BSlider bars";
+
+resource(1004, "IllegalThumb") "Illegal BSlider knob style--using B_BLOCK_THUMB.";
+
+resource(1003, "PrefsNoSetThumbStyle") "Cannot set preferred BSlider knob style.";
+
+resource(1002, "DemoRadioLabelThumbTri") "Triangular Knob";
+
+resource(1001, "DemoRadioLabelThumbRect") "Rectangular Knob";
+
+resource(998, "PrefsNoSetMyBarSliderColor") "Cannot set preferred BSlider Bar Color.";
+
+resource(997, "AboutBaseMsg") "Please let the author know you got this base window requester!";
+
+resource(996, "PrefNoSetBaseFrame") "Cannot set base window frame preference.";
+
+resource(995, "EnterColorWellHeightLabel") "Enter ColorWell Height:";
+
+resource(994, "PrefsNoSetColorWellHeight") "Prefs did not set ColorWell Height.";
+
+resource(993, "EnterColorWellWidthLabel") "Enter ColorWell Width:";
+
+resource(992, "PrefsNoSetColorWellWidth") "Prefs did not set ColorWell Width.";
+
+resource(991, "GetStringGadgetLabel") "put string here:";
+
+resource(990, "buttonLabelsStringGadget") "StringGadget…";
+
+resource(989, "buttonLabelsLongDoubleGadget") "LongDoubleGadget…";
+
+resource(988, "buttonLabelsDoubleGadget") "DoubleGadget…";
+
+resource(987, "cpWindowTitleStringGadget") "StringGadget Color Preferences";
+
+resource(986, "cpWindowTitleLongDoubleGadget") "LongDoubleGadget Color Preferences";
+
+resource(985, "cpWindowTitleDoubleGadget") "DoubleGadget Color Preferences";
+
+resource(984, "GetLongDoubleGadgetLabel") "put long double here:";
+
+resource(983, "GetDoubleGadgetLabel") "put double here:";
+
+resource(982, "GetFloatGadgetLabel") "put float here:";
+
+resource(981, "GetUInt64GadgetLabel") "put uint64 here:";
+
+resource(980, "GetInt64GadgetLabel") "put int64 here:";
+
+resource(979, "GetUInt32GadgetLabel") "put uint32 here:";
+
+resource(978, "GetInt32GadgetLabel") "put int32 here:";
+
+resource(977, "GetUInt16GadgetLabel") "put uint16 here:";
+
+resource(976, "GetInt16GadgetLabel") "put int16 here:";
+
+resource(975, "GetUInt8GadgetLabel") "put uint8 here:";
+
+resource(974, "GetInt8GadgetLabel") "put int8 here:";
+
+resource(973, "AboutSimpleWindowMsg") #'CSTR' array {
+	"Please let the author know you got this simple window requester!"
+	""
+};
+
+resource(972, "WrongKindLMI") "Wrong kind of LayoutMatrixItem.";
+
+resource(971, "S2I64Invalid") #'CSTR' array {
+	"Entry not a valid int64!\r\n\r\nMust be a value between -9223372"
+	"036854775808 and 9223372036854775807, inclusive."
+};
+
+resource(970, "S2I64OutOfRange") "Signed int64 out of range!";
+
+resource(969, "S2I32Invalid") #'CSTR' array {
+	"Entry not a valid int32!\r\n\r\nMust be a value between -2147483"
+	"648 and 2147483647, inclusive."
+};
+
+resource(968, "S2I32OutOfRange") "Signed int32 out of range!";
+
+resource(967, "NumTooSmall") "Number too small.";
+
+resource(966, "NumTooBig") "Number too big.";
+
+resource(965, "NumStrTooLong") "Numeric string too long.";
+
+resource(964, "MessageFindBytes") "Error in message->FindInt32(``bytes'', &rawKeypress).";
+
+resource(844, "WarnTitle") "Warning!";
+
+resource(841, "EnterBarHeightLabel") "Enter Bar Height:";
+
+resource(836, "PrefsNoSetBarHeight") "Prefs did not set Bar Height.";
+
+resource(835, "PrefsNoSetAntiAliasFont") "Prefs did not set bAntiAliasFont.";
+
+resource(834, "BMsgAddXFailPUMInit") "BMessage AddX failed at MyPopUpMenu::Initialize.";
+
+resource(833, "failMenu") "Menu failed!";
+
+resource(832, "NoAdditem") "No item added.";
+
+resource(831, "AntiAliasFont") "Anti Alias Font";
+
+resource(829, "BMsgFailUnflatten") "BMessage failed to unflatten.";
+
+resource(826, "noCCenabled") "No color controls are enabled!";
+
+resource(825, "trunc2short") "String too short to truncate.";
+
+resource(999, "buttonLabelsSlider") "Slider…";
+
+resource(824, "buttonLabelsFloatControl") "Floating Point Control…";
+
+resource(823, "buttonLabelsListView") "List View…";
+
+resource(822, "buttonLabelsStringDraw") "String Drawer…";
+
+resource(821, "buttonLabelsroColourColorWell") "roColour ColorWell…";
+
+resource(820, "buttonLabelsStringControl") "String Control…";
+
+resource(963, "buttonLabelsFloatGadget") "FloatGadget…";
+
+resource(962, "buttonLabelsUInt64Gadget") "UInt64Gadget…";
+
+resource(961, "buttonLabelsInt64Gadget") "Int64Gadget…";
+
+resource(960, "buttonLabelsUInt32Gadget") "UInt32Gadget…";
+
+resource(959, "buttonLabelsInt32Gadget") "Int32Gadget…";
+
+resource(958, "buttonLabelsUInt16Gadget") "UInt16Gadget…";
+
+resource(957, "buttonLabelsInt16Gadget") "Int16Gadget…";
+
+resource(956, "buttonLabelsUInt8Gadget") "UInt8Gadget…";
+
+resource(955, "buttonLabelsInt8Gadget") "Int8Gadget…";
+
+resource(819, "buttonLabelsUInt32Control") "UInt32Control…";
+
+resource(818, "buttonLabelsTextView") "Text View…";
+
+resource(817, "buttonLabelsColorControl") "Color Control…";
+
+resource(816, "buttonLabelsStatusBar") "StatusBar…";
+
+resource(815, "buttonLabelsCheckBox") "CheckBox…";
+
+resource(814, "buttonLabelsRadioButtons") "Radio Buttons…";
+
+resource(813, "buttonLabelsPictureButton") "Picture Button…";
+
+resource(812, "buttonLabelsButton") "Button…";
+
+resource(811, "buttonLabelsUnderlyingview") "Underlying view…";
+
+resource(1000, "cpWindowTitleSlider") "Slider Color Preferences";
+
+resource(954, "cpWindowTitleFloatGadget") "FloatGadget Color Preferences";
+
+resource(953, "cpWindowTitleInt64Gadget") "Int64Gadget Color Preferences";
+
+resource(952, "cpWindowTitleUInt64Gadget") "UInt64Gadget Color Preferences";
+
+resource(951, "cpWindowTitleInt32Gadget") "Int32Gadget Color Preferences";
+
+resource(950, "cpWindowTitleUInt32Gadget") "UInt32Gadget Color Preferences";
+
+resource(949, "cpWindowTitleInt16Gadget") "Int16Gadget Color Preferences";
+
+resource(948, "cpWindowTitleUInt16Gadget") "UInt16Gadget Color Preferences";
+
+resource(947, "cpWindowTitleInt8Gadget") "Int8Gadget Color Preferences";
+
+resource(946, "cpWindowTitleUInt8Gadget") "UInt8Gadget Color Preferences";
+
+resource(8101, "cpWindowTitleFloatControl") "Float Control Color Preferences";
+
+resource(810, "cpWindowTitleListview") "ListView Color Preferences";
+
+resource(809, "cpWindowTitleStringDrawer") "String Drawer Color Preferences";
+
+resource(808, "cpWindowTitleroColourColorWell") "roColour ColorWell Color Preferences";
+
+resource(807, "cpWindowTitleStringControl") "String Control Color Preferences";
+
+resource(806, "cpWindowTitleUInt32Control") "UInt32 Control Color Preferences";
+
+resource(805, "cpWindowTitleTextview") "TextView Color Preferences";
+
+resource(804, "cpWindowTitleColorControl") "ColorControl Color Preferences";
+
+resource(803, "cpWindowTitleStatusBar") "StatusBar Color Preferences";
+
+resource(802, "cpWindowTitleCheckBox") "CheckBox Color Preferences";
+
+resource(801, "cpWindowTitleRadioButton") "Radio Button Color Preferences";
+
+resource(800, "cpWindowTitlePicture") "Picture Color Preferences";
+
+resource(799, "cpWindowTitleButton") "Button Color Preferences";
+
+resource(469, "fineStr") "Fine";
+
+resource(464, "FailRadioInit") "Bad initialization of MyRadioView, NULL param.";
+
+resource(463, "FailPUMInit") "Bad initialization of MyPopUpMenu, NULL param.";
+
+resource(461, "FailPUMInitFontWindow") "PopUpMenu failed Initialize() for font Window.";
+
+resource(460, "NoSpecColorWindow") "No new specific color preference window.";
+
+resource(459, "NoBasicColorWindow") "No new basic view color preference window.";
+
+resource(458, "BasicColorWindowTitle") "Basic View Colors";
+
+resource(457, "DisplayroColourWells") "Display roColour wells";
+
+resource(456, "DisplayBColorControls") "Display BColorControls";
+
+resource(455, "BadSpecKindColorSetLow") "Bad kind specific color set low.";
+
+resource(454, "BadSpecKindColorSetHigh") "Bad kind specific color set high.";
+
+resource(453, "BadSpecKindColorSetView") "Bad kind specific color set view.";
+
+resource(452, "BadSpecKindQR") "Bad specific color kind QuitRequested.";
+
+resource(451, "BadSpecItemKind") "Specific item bad kind.";
+
+resource(450, "DemoTextItemText") "This is how your text will look!";
+
+resource(449, "DemoRoLabel") "A roColour ColorWell ";
+
+resource(4481, "FloatControlLabel") "put a floating point number here:";
+
+resource(448, "UInt32ControlLabel") "put an unsigned 32 bit integer here:";
+
+resource(447, "InvokeFromList") "Item invoked on list.";
+
+resource(446, "SelectFromList") "Item selected from list.";
+
+resource(445, "ListViewSample3") "get third item";
+
+resource(444, "ListViewSample2") "second item on the list of things";
+
+resource(443, "ListViewSample1") "first MASTER list item";
+
+resource(442, "ListViewGadgetLabel") "This is the way selection lists will look:";
+
+resource(441, "TextGadgetLabel") "Put some text here!";
+
+resource(440, "StringControlLabel") "Put some string data here:";
+
+resource(439, "DemoStatusBarTrailLabel") " trailing label";
+
+resource(438, "DemoStatusBarLeadLabel") "leading label: ";
+
+resource(437, "DemoCheckBoxLabel") "Check me out!";
+
+resource(436, "RadioViewFailInit") "Radio View failed Initialize().";
+
+resource(435, "DemoRadio3Label") "troi";
+
+resource(434, "DemoRadio2Label") "twice";
+
+resource(433, "DemoRadio1Label") "one";
+
+resource(432, "DemoButtonLabel") "Button";
+
+resource(431, "BarColorTitle") "Bar Preferences";
+
+resource(430, "RoBadMsg") "roColour sent a bad colorToChange message.";
+
+resource(429, "DemoRoNo") "Demo roColourWell does not make any changes!";
+
+resource(428, "ColorWindowHeading7") "main low roColour>";
+
+resource(427, "ColorWindowHeading6") "main high roColour>";
+
+resource(426, "ColorWindowHeading5") "main view roColour>";
+
+resource(425, "ColorWindowHeading4") "Set Low color:";
+
+resource(424, "ColorWindowHeading3") "Set High color:";
+
+resource(423, "ColorWindowHeading2") "Set View color:";
+
+resource(422, "BasicColorWindowHeading1") "Underlying View Colors";
+
+resource(421, "S2UI32Invalid") #'CSTR' array {
+	"Entry not a valid uint32!\r\n\r\nMust be a non-negative value be"
+	"tween 0 and 4294967295, inclusive."
+};
+
+resource(420, "S2UI32OutOfRange") "Unsigned int32 out of range!";
+
+resource(419, "S2UI32Neg") #'CSTR' array {
+	"Entry negative!\r\n\r\nMust be a non-negative value between 0 an"
+	"d 4294967295, inclusive."
+};
+
+resource(418, "PrefNoSetGutFrame") "Cannot set scrolling window frame preference.";
+
+resource(417, "NotFoundScrollView") "My ScrollView not found!";
+
+resource(416, "ScreenNotValid") "!screen.IsValid()";
+
+resource(415, "CloseWindow") "Close window";
+
+resource(414, "FileMenuLabel") "File";
+
+resource(413, "QuitMenuLabel") "Quit";
+
+resource(412, "AppMenuLabel") "APP";
+
+resource(411, "NoShowView") "nsv";
+
+resource(410, "NoShowWindow") "nsw";
+
+resource(409, "FailAqSem") "Aquire_sem failed\r\n\r\n";
+
+resource(408, "FailCreateSemaphore") "Could not create_sem.";
+
+resource(407, "PrefsNoSetMyListViewViewColor") "Prefs cannot set list view view color.";
+
+resource(406, "PrefsNoSetMyListViewLowColor") "Prefs cannot set list view low color.";
+
+resource(405, "PrefsNoSetMyListViewHighColor") "Prefs cannot set list view high color.";
+
+resource(404, "BarCCLabel") "Bar Color";
+
+resource(403, "BarCWLabel") "Bar roColour>";
+
+resource(402, "PrefPanelWindowHeading2") "Interface Color Preferences";
+
+resource(401, "PrefPanelFontButtonLabel") "Font…";
+
+resource(400, "PrefPanelWindowHeading1") "General Preferences";
+
+resource(399, "PrefsNoSaveSet") "Prefs cannot save settings.";
+
+resource(398, "PrefsNoSetUseColorControl") "Prefs cannot set bool UseColorControl.";
+
+resource(397, "PrefsNoSetUseColorWell") "Prefs cannot set bool UseColorWell.";
+
+resource(396, "PrefsNoSetOpenFontDisplay") "Prefs cannot set bool OpenFontDisplay.";
+
+resource(395, "PrefsNoSetFont") "Prefs cannot set font.";
+
+resource(394, "FailMaxFontSize") "Font must remain below 51000, sorry.";
+
+resource(393, "FailMinFontSize") "Font must remain above 0, sorry.";
+
+resource(392, "FailFontDisplayWindow") "No new font display window.";
+
+resource(391, "FontDisplayWindowTitle") "Font Display Window";
+
+resource(390, "FontDisplayNotNull") "Major problem, font display window not NULL.";
+
+resource(389, "DisplayFontCheckBoxLabel") "Display font";
+
+resource(388, "EnterFontSizeLabel") "Enter font size";
+
+resource(387, "SmallerFontButtonLabel") "Smaller font";
+
+resource(386, "BiggerFontButtonLabel") "Bigger font";
+
+resource(385, "FontPrefWindowHeading1") "Font Preferences";
+
+resource(384, "FontPrefWindowTitle") "Font Preference Panel";
+
+resource(383, "PrefsNoSetViewColor") "Cannot set preferred view color.";
+
+resource(382, "PrefsNoSetLowColor") "Cannot set preferred low color.";
+
+resource(381, "PrefsNoSetHighColor") "Cannot set preferred high color.";
+
+resource(936, "PrefsNoSetFloatGadgetViewColor") "Cannot set preferred Float Gadget view color.";
+
+resource(935, "PrefsNoSetFloatGadgetLowColor") "Cannot set preferred Float Gadget low color.";
+
+resource(934, "PrefsNoSetFloatGadgetHighColor") "Cannot set preferred Float Gadget high color.";
+
+resource(933, "PrefsNoSetUInt64GadgetViewColor") "Cannot set preferred UInt64 Gadget view color.";
+
+resource(932, "PrefsNoSetUInt64GadgetLowColor") "Cannot set preferred UInt64 Gadget low color.";
+
+resource(931, "PrefsNoSetUInt64GadgetHighColor") "Cannot set preferred UInt64 Gadget high color.";
+
+resource(930, "PrefsNoSetInt64GadgetViewColor") "Cannot set preferred Int64 Gadget view color.";
+
+resource(929, "PrefsNoSetInt64GadgetLowColor") "Cannot set preferred Int64 Gadget low color.";
+
+resource(928, "PrefsNoSetInt64GadgetHighColor") "Cannot set preferred Int64 Gadget high color.";
+
+resource(927, "PrefsNoSetUInt32GadgetViewColor") "Cannot set preferred UInt32 Gadget view color.";
+
+resource(926, "PrefsNoSetUInt32GadgetLowColor") "Cannot set preferred UInt32 Gadget low color.";
+
+resource(925, "PrefsNoSetUInt32GadgetHighColor") "Cannot set preferred UInt32 Gadget high color.";
+
+resource(924, "PrefsNoSetInt32GadgetViewColor") "Cannot set preferred Int32 Gadget view color.";
+
+resource(923, "PrefsNoSetInt32GadgetLowColor") "Cannot set preferred Int32 Gadget low color.";
+
+resource(922, "PrefsNoSetInt32GadgetHighColor") "Cannot set preferred Int32 Gadget high color.";
+
+resource(921, "PrefsNoSetUInt16GadgetViewColor") "Cannot set preferred UInt16 Gadget view color.";
+
+resource(920, "PrefsNoSetUInt16GadgetLowColor") "Cannot set preferred UInt16 Gadget low color.";
+
+resource(919, "PrefsNoSetUInt16GadgetHighColor") "Cannot set preferred UInt16 Gadget high color.";
+
+resource(918, "PrefsNoSetInt16GadgetViewColor") "Cannot set preferred Int16 Gadget view color.";
+
+resource(917, "PrefsNoSetInt16GadgetLowColor") "Cannot set preferred Int16 Gadget low color.";
+
+resource(916, "PrefsNoSetInt16GadgetHighColor") "Cannot set preferred Int16 Gadget high color.";
+
+resource(915, "PrefsNoSetUInt8GadgetViewColor") "Cannot set preferred UInt8 Gadget view color.";
+
+resource(914, "PrefsNoSetUInt8GadgetLowColor") "Cannot set preferred UInt8 Gadget low color.";
+
+resource(913, "PrefsNoSetUInt8GadgetHighColor") "Cannot set preferred UInt8 Gadget high color.";
+
+resource(912, "PrefsNoSetInt8GadgetViewColor") "Cannot set preferred Int8 Gadget view color.";
+
+resource(911, "PrefsNoSetInt8GadgetLowColor") "Cannot set preferred Int8 Gadget low color.";
+
+resource(910, "PrefsNoSetInt8GadgetHighColor") "Cannot set preferred Int8 Gadget high color.";
+
+resource(3801, "PrefsNoSetFloatControlViewColor") "Cannot set preferred Float Control view color.";
+
+resource(3791, "PrefsNoSetFloatControlLowColor") "Cannot set preferred Float Control low color.";
+
+resource(3531, "PrefsNoSetFloatControlHighColor") "Cannot set preferred Float Control high color.";
+
+resource(380, "PrefsNoSetUInt32ControlViewColor") "Cannot set preferred UInt32 Control view color.";
+
+resource(379, "PrefsNoSetUInt32ControlLowColor") "Cannot set preferred UInt32 Control low color.";
+
+resource(353, "PrefsNoSetUInt32ControlHighColor") "Cannot set preferred UInt32 Control high color.";
+
+resource(378, "PrefsNoSetMyTextViewViewColor") "Cannot set preferred BTextView view color.";
+
+resource(377, "PrefsNoSetMyTextViewLowColor") "Cannot set preferred BTextView low color.";
+
+resource(376, "PrefsNoSetMyTextViewHighColor") "Cannot set preferred BTextView high color.";
+
+resource(375, "PrefsNoSetMyRadioViewViewColor") "Cannot set preferred RadioView view color.";
+
+resource(374, "PrefsNoSetMyRadioViewLowColor") "Cannot set preferred RadioView low color.";
+
+resource(373, "PrefsNoSetMyRadioViewHighColor") "Cannot set preferred RadioView high color.";
+
+resource(372, "PrefsNoSetMyStringDrawerViewColor") "Cannot set preferred String Drawing view color.";
+
+resource(371, "PrefsNoSetMyStringDrawerLowColor") "Cannot set preferred String Drawing low color.";
+
+resource(370, "PrefsNoSetMyStringDrawerHighColor") "Cannot set preferred String Drawing high color.";
+
+resource(369, "PrefsNoSetMyColorControlViewColor") "Cannot set preferred BColorControl view color.";
+
+resource(368, "PrefsNoSetMyColorControlLowColor") "Cannot set preferred BColorControl low color.";
+
+resource(367, "PrefsNoSetMyColorControlHighColor") "Cannot set preferred BColorControl high color.";
+
+resource(366, "PrefsNoSetMyBarStatusColor") "Cannot set preferred BStatusBar Bar Color.";
+
+resource(365, "PrefsNoSetMyStatusBarViewColor") "Cannot set preferred BStatusBar view color.";
+
+resource(364, "PrefsNoSetMyStatusBarLowColor") "Cannot set preferred StatusBar low color.";
+
+resource(363, "PrefsNoSetMyStatusBarHighColor") "Cannot set preferred BStatusBar high color.";
+
+resource(362, "PrefsNoSetMyCheckBoxViewColor") "Cannot set preferred BCheckBox view color.";
+
+resource(361, "PrefsNoSetMyCheckBoxLowColor") "Cannot set preferred BCheckBox low color.";
+
+resource(360, "PrefsNoSetMyCheckBoxHighColor") "Cannot set preferred BCheckBox high color.";
+
+resource(359, "PrefsNoSetMyPictureButtonViewColor") "Cannot set preferred BPictureButton view color.";
+
+resource(358, "PrefsNoSetMyPictureButtonLowColor") "Cannot set preferred BPictureButton low color.";
+
+resource(357, "PrefsNoSetMyPictureButtonHighColor") "Cannot set preferred BPictureButton high color.";
+
+resource(356, "PrefsNoSetMyButtonViewColor") "Cannot set preferred BButton view color.";
+
+resource(355, "PrefsNoSetMyButtonLowColor") "Cannot set preferred BButton low color.";
+
+resource(354, "PrefsNoSetMyButtonHighColor") "Cannot set preferred BButton high color.";
+
+resource(352, "PrefsNoSetColorWellViewColor") "Cannot set preferred ColorWell view color.";
+
+resource(351, "PrefsNoSetolorWellLowColor") "Cannot set preferred ColorWell low color.";
+
+resource(350, "PrefsNoSetColorWellHighColor") "Cannot set preferred ColorWell high color.";
+
+resource(349, "PreferencePanelWindowTitle") "Preference Panel";
+
+resource(3481, "PrefFailGetSettings") "Cannot get preferences settings.";
+
+resource(348, "PrefFailSetSettings") "Cannot set preferences settings.";
+
+resource(347, "PrefFailInit") "Cannot initialize preferences.";
+
+resource(345, "PreferenceMenuLabel") "Preferences…";
+
+resource(297, "s2fErr") "Cannot convert entry to floating point32 number.";
+
+resource(283, "notOnDataList") "Item not on data list.";
+
+resource(261, "FailCaseDefaultDataNode") "Case default: Failure in dataNode.cpp.";
+
+resource(260, "FailCaseDefaultDataList") "Case default: Failure in dataList.cpp.";
+
+resource(258, "FailListViewNoOf") "No list with which to compare.";
+
+resource(257, "FailListViewNoTo") "No list to add to.";
+
+resource(256, "FailListViewNoFrom") "No list from which to choose.";
+
+resource(255, "FailListView") "Could not open window for list view.";
+
+resource(246, "FailMyStringDrawer") "Could not create memory for a MyStringDrawer.";
+
+resource(244, "FailScrollView") "Could not create memory for a Scroll View.";
+
+resource(240, "FailDataNode") "Could not create a new Data Node.";
+
+resource(237, "FailDataList") "Could not create a new DataList.";
+
+resource(235, "FailIntReqWindow") "Could not open integer request window.";
+
+resource(909, "FailFloatGadget") "Could not create a new floating point gadget.";
+
+resource(908, "FailUInt64Gadget") "Could not create a new unsigned 64 bit integer gadget.";
+
+resource(907, "FailInt64Gadget") "Could not create a new signed 64 bit integer gadget.";
+
+resource(906, "FailUInt32Gadget") "Could not create a new unsigned 32 bit integer gadget.";
+
+resource(905, "FailInt32Gadget") "Could not create a new signed 32 bit integer gadget.";
+
+resource(904, "FailUInt16Gadget") "Could not create a new unsigned 16 bit integer gadget.";
+
+resource(903, "FailInt16Gadget") "Could not create a new signed 16 bit integer gadget.";
+
+resource(902, "FailUInt8Gadget") "Could not create a new unsigned 8 bit integer gadget.";
+
+resource(901, "FailInt8Gadget") "Could not create a new signed 8 bit integer gadget.";
+
+resource(234, "FailUInt32Control") "Could not create a new unsigned 32 bit integer control.";
+
+resource(233, "FailStringControl") "Could not create a new string gadget.";
+
+resource(231, "FailFloatControl") "Could not create a new Float control.";
+
+resource(227, "FailMemory") "Could not create memory for Be class.";
+
+resource(226, "WarningOKLabel") "I'm warned!";
+
+resource(120, "FailListViewWindow") "Caught @ List View Window CTOR.";
+
+resource(100, "BadSpecColorKindLow") "Caught specific color kind low CTOR.";
+
+resource(99, "BadSpecColorKindHigh") "Caught specific color kind high CTOR.";
+
+resource(98, "BadSpecColorKindView") "Caught specific color kind view CTOR.";
+
+resource(97, "CaughtSpecificColorWindowCTOR") "Caught @ specific color window CTOR.";
+
+resource(96, "CaughtBasicColorWindowCTOR") "Caught @ basic color window CTOR.";
+
+resource(95, "NoPrefPanelWindow") "Caught @ Preferences.";
+
+resource(94, "CaughtPrefPanelWindowCTOR") "Caught @ Preference Panel Window CTOR.";
+
+resource(93, "CaughtFontPrefWindowCTOR") "Caught @ Font Preference Window.";
+
+resource(87, "ReallyQuitApp") #'CSTR' array {
+	"\r\n\r\nDo you REALLY wish to quit this fine program?\r\n\r\n\r\n"
+	"Any unsaved data will be lost!"
+};
+
+resource(86, "FailLockLooper") "Could not lock looper.";
+
+resource(58, "AboutFontDisplayWindow") #'CSTR' array {
+	"This is a display of the current font at regular size, for refer"
+	"ence."
+};
+
+resource(57, "AboutSpecColorWindow") #'CSTR' array {
+	"Setting gadget colors can create interesting (and annoying) disp"
+	"lays!\r\n\r\nIf you muck up things too terribly, delete the pref"
+	"erence file to restore the defaults!"
+};
+
+resource(56, "AboutBasicColorWindowMsg2") "The Low color might affect anti-aliasing in text display.";
+
+resource(55, "AboutBasicColorWindowMsg1") #'CSTR' array {
+	"Use these color controls to set the basic underlying view colors"
+	".\r\n\r\nIf the view color and high color are different, window "
+	"updating will be more noticable."
+};
+
+resource(54, "AboutGutMsg") #'CSTR' array {
+	"Please let the author know you got this scrolling window request"
+	"er!"
+};
+
+resource(53, "AboutFontPrefWindowMsg6") #'CSTR' array {
+	"The 'font style' pop up menu allow you to change the current reg"
+	"ular font's style (but has not yet been implimented!)"
+};
+
+resource(52, "AboutFontPrefWindowMsg5") #'CSTR' array {
+	"The 'current font' pop up menu allow you to change the current r"
+	"egular font's family (but has not yet been implimented!)"
+};
+
+resource(51, "AboutFontPrefWindowMsg4") #'CSTR' array {
+	"The 'Display font' checkbox controls whether the Font Display Wi"
+	"ndow is shown or not (it might be behind this window if it is ch"
+	"ecked but not visible!)"
+};
+
+resource(50, "AboutFontPrefWindowMsg3") #'CSTR' array {
+	"Enter a specific font size in the float gadget to make the regul"
+	"ar font that size."
+};
+
+resource(49, "AboutFontPrefWindowMsg2") #'CSTR' array {
+	"Use the 'Smaller font' gadget to make the regular font one size "
+	"smaller."
+};
+
+resource(48, "AboutFontPrefWindowMsg1") #'CSTR' array {
+	"Use the 'Bigger font' gadget to make the regular font one size l"
+	"arger."
+};
+
+resource(25, "AboutListViewWindow") #'CSTR' array {
+	"\r\n\r\nSelect one or more items from this list. If only one ite"
+	"m may be selected the window will close automatically with your "
+	"selection."
+};
+
+resource(22, "AboutPrefPanelWindow") #'CSTR' array {
+	"Select the 'Font' gadget to access the panel to change font spec"
+	"ifications.\r\nTo use either color picking gadget select it's ch"
+	"eck box (you may use both).\r\nSelect an item's gadget to change"
+	" it's colors."
+};
+
+resource(21, "FontStylePUMLabel") "Select font style:";
+
+resource(20, "FontFamilyPUMLabel") "Select font family:";
+
+resource(19, "AboutMenuLabel") "About…";
+
+resource(9, "FailCreateAll") "new Class throw at beginning.";
+
+resource(6, "VerifyDo") "I really know what I'm doing";
+
+resource(5, "VerifyTitle") "Extremely significant operation, please verify your action!\r\n\r";
+
+resource(3, "BeGUIPreference") "x-EFM5.BeGUIPref";
+
+resource(2, "VerifyDoNot") "Don't do it--what ever it is!";
+
+resource(1, "VerifyCancel") "Cancel";

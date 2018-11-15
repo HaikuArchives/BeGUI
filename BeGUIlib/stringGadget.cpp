@@ -119,7 +119,7 @@ StringGadget	::	AttachedToWindow(	void)
 void 
 StringGadget	::	MessageReceived(	BMessage * paramMessage)
 {
-	BMessage * msg = new BMessage(paramMessage);
+	BMessage * msg = new BMessage(*paramMessage);
 	mpMessageTarget->PostMessage(msg);
 	BTextView::MessageReceived(paramMessage);
 }//end

@@ -1,0 +1,20 @@
+
+resource(4038, "FailResourceSetTo") "Fail BResources SetTo().";
+
+resource(4034, "FailFileFindRef") "Fail BFile FindRef()";
+
+resource(4030, "FailEntryInitCheck") "Fail BEntry InitCheck().";
+
+resource(4028, "FailRemoveResource") "Could not remove resources.";
+
+resource(4027, "FailAddResource") "Could not add resources.";
+
+resource(4005, "ProgramName") "Resourceful";
+
+resource(4004, "FailTitleWindow") "No new Title Window";
+
+resource(4003, "aResource") "Ed Musgrove";
+
+resource(4001, "AppSignature") "x-vnd.EFM5.Resourceful";
+
+resource(4000, "cIDMsg") "Resourceful version 1.0.0 Ed Musgrove BeDevID#2076";

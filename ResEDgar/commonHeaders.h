@@ -11,9 +11,9 @@
 	#include <KernelKit.h>
 	#include <StorageKit.h>
 	#include <SupportKit.h>
+	#include <String.h>
 	#include <stdio.h>
 	#include <memory>
-	#include <String.h>
 	#include <string.h>
 	#include <stdlib.h>
 	#include <limits.h>
