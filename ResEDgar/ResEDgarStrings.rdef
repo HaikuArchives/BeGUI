@@ -1,0 +1,102 @@
+
+resource(4042, "AppsPrefsNoSave") "Application PreferenceSet failed Save().";
+
+resource(4041, "AppPrefNoSetData") "Application PreferenceSet failed SetData().";
+
+resource(4040, "AppPrefSetFailInit") "Application PreferenceSet failed Init().";
+
+resource(4039, "AppPrefFailInit") "Application Preferences failed Init().";
+
+resource(4038, "FailResourceSetTo") "Fail BResources SetTo().";
+
+resource(4037, "NoStrRes") "This file has no string resources.";
+
+resource(4036, "ResEdWindow") "Edit String Resources";
+
+resource(4035, "OpenPanelTitle") "Open Resource File";
+
+resource(4034, "FailFileFindRef") "Fail BFile FindRef()";
+
+resource(4033, "FailFileInitCheck") "Fail BFile InitCheck().";
+
+resource(4032, "FailPathSetTo") "Fail BPath SetTo().";
+
+resource(4031, "FailPathInitCheck") "Fail BPath InitCheck().";
+
+resource(4030, "FailEntryInitCheck") "Fail BEntry InitCheck().";
+
+resource(4029, "Load") "Load";
+
+resource(4028, "FailRemoveResource") "Could not remove resources.";
+
+resource(4027, "FailAddResource") "Could not add resources.";
+
+resource(4026, "AboutResEdWindowMsg3") #'CSTR' array {
+	"The next time you run the program, the changes you make here wil"
+	"l be implemented.\r\n\r\n"
+};
+
+resource(4025, "AboutResEdWindowMsg2") #'CSTR' array {
+	"Select `Save' from this window's menu or the title window's gadg"
+	"et or menu when you have made the changes you desire.\r\n\r\n"
+};
+
+resource(4024, "AboutResEdWindowMsg1") #'CSTR' array {
+	"This window presents a list of the string resources of the file "
+	"you selected. Make any changes in the boxes to the right.\r\n\r\n"
+	""
+};
+
+resource(4023, "FileMenuLabel") "File";
+
+resource(4022, "Save") "Save";
+
+resource(4021, "CaughtResEdWindowCTOR") "Caught @ ResEdWindow CTOR.";
+
+resource(4020, "EdittedRes") "Edit resource here:";
+
+resource(4019, "OrigRes") "Original resource:";
+
+resource(4018, "EditResOf") "Edit the string resources of:";
+
+resource(4017, "ReallyQuitApp") "\tReally quit application?\r\n\r\nAll unsaved data will be lost!";
+
+resource(4016, "QuitMenuLabel") "Quit application";
+
+resource(4015, "CloseWindow") "Close window";
+
+resource(4012, "AppMenuLabel") "APP";
+
+resource(4011, "FailCreateSemaphore") "Failed to create semaphore.\r\n\r\n";
+
+resource(4010, "CaughtTitleWindowCTOR") "Caught @ Title Window CTOR\r\n\r\n";
+
+resource(4009, "AboutTitleWindowMsg3") #'CSTR' array {
+	"This allows for an easy method of language localization (at leas"
+	"t for the programmer).\r\n\r\n"
+};
+
+resource(4008, "AboutTitleWindowMsg2") #'CSTR' array {
+	"Select the save button to make any canges you might have made. A"
+	" standard Be file panel will appear.\r\n\r\n"
+};
+
+resource(4007, "AboutTitleWindowMsg1") #'CSTR' array {
+	"\tTitle Window\r\n\r\n\r\nResEDgar is a GUI string resource edit"
+	"or which uses libBeGUI.so for gadgets and Jon Watte's libprefs.s"
+	"o for preferences.\r\n\r\nSelect the load button to edit the str"
+	"ing resources of a file. A standard Be file panel will appear.\r"
+	"\n\r\n"
+};
+
+resource(4006, "ProgramNameSubTitle") "a GUI string resource editor";
+
+resource(4005, "ProgramName") "ResEDgar";
+
+resource(4004, "FailTitleWindow") "No new Title Window";
+
+resource(4003, "TitleWindowTitle") "ResEDgar by Ed Musgrove";
+
+resource(4001, "AppSignature") "x-vnd.EFM5.ResEDgar";
+
+resource(4000, "cIDMsg") "ResEDgar\r\nversion 1.1.0\r\nEd Musgrove BeDevID#2076";

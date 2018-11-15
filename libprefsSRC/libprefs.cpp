@@ -49,6 +49,10 @@
 #include <stdlib.h>
 #endif
 
+#if !defined(_ENTRY_H)
+#include <Entry.h>
+#endif
+
 #if !defined(_ERRNO_H)
 #include <errno.h>
 #endif
@@ -440,7 +444,7 @@ _PREFMakePath(
 {
 	status_t err = B_OK;
 	BPath bpath;
-	err = find_directory(user_level ? B_USER_SETTINGS_DIRECTORY : B_COMMON_SETTINGS_DIRECTORY, &bpath, true, NULL);
+	err = find_directory(user_level ? B_USER_SETTINGS_DIRECTORY : B_SYSTEM_SETTINGS_DIRECTORY, &bpath, true, NULL);
 	if (err < B_OK) return err;
 	strncpy(path, bpath.Path(), path_max);
 	path[path_max-1] = 0;
@@ -1203,7 +1207,7 @@ typedef struct _PREFAppIterator {
 			curItem = 0;
 			item = new char*[block];
 			BPath bpath;
-			if (!find_directory(user_level ? B_USER_SETTINGS_DIRECTORY : B_COMMON_SETTINGS_DIRECTORY, &bpath, true, NULL))
+			if (!find_directory(user_level ? B_USER_SETTINGS_DIRECTORY : B_SYSTEM_SETTINGS_DIRECTORY, &bpath, true, NULL))
 			{
 				BDirectory dir(bpath.Path());
 				BEntry entry;
@@ -1325,7 +1329,7 @@ typedef struct _PREFSetIterator
 			curItem = 0;
 			item = new char*[block];
 			BPath bpath;
-			if (!find_directory(user_level ? B_USER_SETTINGS_DIRECTORY : B_COMMON_SETTINGS_DIRECTORY, &bpath, true, NULL))
+			if (!find_directory(user_level ? B_USER_SETTINGS_DIRECTORY : B_SYSTEM_SETTINGS_DIRECTORY, &bpath, true, NULL))
 			{
 				char str[B_FILE_NAME_LENGTH+20];
 				strcpy(str, LP_MAGIC);

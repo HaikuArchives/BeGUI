@@ -1,0 +1,36 @@
+
+resource(111, "NoBitmap") "FetchBitmap() returned NULL.";
+
+resource(110, "FailFetchBitmapTranslate") "FetchBitmap() Translate failed.";
+
+resource(109, "FailFetchBitmapBTranslatorRoster") "FetchBitmap() BTranslatorRoster no ::Default.";
+
+resource(108, "FailFetchBitmapFile") "FetchBitmap() file failed InitCheck().";
+
+resource(17, "ReallyQuitApp") "\tReally quit application?\r\n\r\nAll unsaved data will be lost!";
+
+resource(16, "QuitMenuLabel") "Quit application";
+
+resource(15, "CloseWindow") "Close window";
+
+resource(13, "AppMenuLabel") "APP";
+
+resource(11, "CaughtTextEdWindowCTOR.") "Caught @ PrefsEDgar Window CTOR.";
+
+resource(10, "CaughtPrefsEDgarWindowCTOR.") "Caught @ Tool Palette Window CTOR.";
+
+resource(9, "AboutPrefsEDgarWindowMsg3") "This allows you to see some possibilities.";
+
+resource(8, "AboutPrefsEDgarWindowMsg2") "Useful in setting system BeGUI preferences.";
+
+resource(7, "AboutPrefsEDgarWindowMsg1") "\tPrefsEDgar\r\n\r\n";
+
+resource(6, "ProgramNameSubTitle") "A BeGUI Preference Editor";
+
+resource(5, "ProgramName") "PrefsEDgar";
+
+resource(3, "PrefsEDgarWindowTitle") "PrefsEDgar";
+
+resource(2, "AppSignature") "x-vnd.EFM5.PrefsEDgar";
+
+resource(1, "cIDMsg") "PrefsEDgar\r\nversion 0.0.1\r\nEd Musgrove BeDevID#2076";

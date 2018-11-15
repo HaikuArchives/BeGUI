@@ -163,7 +163,7 @@ UInt64Gadget	::	MessageReceived(	BMessage * paramMessage)
 	if (notFailed)
 	{
 		mbsValueString = entry;
-		BMessage * msg = new BMessage(paramMessage);
+		BMessage * msg = new BMessage(*paramMessage);
 		mpMessageTarget->PostMessage(msg);
 		return;
 	}
