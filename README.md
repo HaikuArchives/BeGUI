@@ -15,9 +15,3 @@ Copyright
 ------------
 
 Original 1999 version by Ed Musgrove, enhanced and updated for Haiku in 2018 by Arnav Bhatt.
-
-
-Contact
-----------
-
-Write us at edgar@harbornet.com
