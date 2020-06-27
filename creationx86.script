@@ -2,46 +2,47 @@
 
 echo making BeGUI stuff
 
-
+echo prepare BeGUI directories
+mkdir -p BeGUI/lib
+mkdir -p BeGUIlib/lib PrefsEDgar/lib ResEDgar/lib
 
 echo making libprefs for R4
 cd  libprefsSRC
-make -f makefile.lib
+make -f makefile.lib OBJ_DIR=objects
 echo copying libprefs to lib dirs
-cp objects.x86-cc2-release/libprefs.so /boot/home/config/non-packaged/lib 
-cp objects.x86-cc2-release/libprefs.so ../BeGUIlib/lib
-cp objects.x86-cc2-release/libprefs.so ../PrefsEDgar/lib
-cp objects.x86-cc2-release/libprefs.so ../ResEDgar/lib
-rm objects.x86-cc2-release/libprefs.so
-
-cd ../BeGUIlib
+cp objects/libprefs.so ../BeGUIlib/lib
+cp objects/libprefs.so ../PrefsEDgar/lib
+cp objects/libprefs.so ../ResEDgar/lib
+cp objects/libprefs.so ../BeGUI/lib
 
 echo making libBeGUI.so
-make -f makefile.lib
+cd ../BeGUIlib
+make -f makefile.lib OBJ_DIR=objects
 echo copying libBeGUI to lib dirs
-cp objects.x86-cc2-release/libBeGUI.so /boot/home/config/non-packaged/lib
-cp objects.x86-cc2-release/libBeGUI.so lib
-cp objects.x86-cc2-release/libBeGUI.so ../PrefsEDgar/lib
-cp objects.x86-cc2-release/libBeGUI.so ../ResEDgar/lib
-rm objects.x86-cc2-release/libBeGUI.so
-
-cd ../PrefsEDgar
+cp objects/libBeGUI.so lib
+cp objects/libBeGUI.so ../PrefsEDgar/lib
+cp objects/libBeGUI.so ../ResEDgar/lib
+cp objects/libBeGUI.so ../BeGUI/lib
 
 echo making PrefsEDgar
-make -f PrefsEDgar.makefile
-cp objects.x86-cc2-release/PrefsEDgar PrefsEDgar
-rm objects.x86-cc2-release/PrefsEDgar
-
-cd ../ResEDgar
+cd ../PrefsEDgar
+make -f PrefsEDgar.makefile OBJ_DIR=objects
+mv objects/PrefsEDgar ../BeGUI/PrefsEDgar
 
 echo making ResEDgar
-make -f ResEDgar.makefile
-cp objects.x86-cc2-release/ResEDgar ResEDgar
-rm objects.x86-cc2-release/ResEDgar
-
-cd ../Resourceful
+cd ../ResEDgar
+make -f ResEDgar.makefile OBJ_DIR=objects
+mv objects/ResEDgar ../BeGUI/ResEDgar
 
 echo making Resourceful
-make -f Resourceful.makefile
-cp objects.x86-cc2-release/Resourceful Resourceful
-rm objects.x86-cc2-release/Resourceful
+cd ../Resourceful
+make -f Resourceful.makefile OBJ_DIR=objects
+mv objects/Resourceful ../BeGUI/Resourceful
+
+echo cleaning after build
+cd ..
+rm -rf libprefsSRC/{objects,lib}
+rm -rf BeGUIlib/{objects,lib}
+rm -rf PrefsEDgar/{objects,lib}
+rm -rf ResEDgar/{objects,lib}
+rm -rf Resourceful/{objects,lib}
