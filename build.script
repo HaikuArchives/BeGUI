@@ -38,11 +38,3 @@ echo making Resourceful
 cd ../Resourceful
 make -f Resourceful.makefile OBJ_DIR=objects
 mv objects/Resourceful ../BeGUI/Resourceful
-
-echo cleaning after build
-cd ..
-rm -rf libprefsSRC/{objects,lib}
-rm -rf BeGUIlib/{objects,lib}
-rm -rf PrefsEDgar/{objects,lib}
-rm -rf ResEDgar/{objects,lib}
-rm -rf Resourceful/{objects,lib}
