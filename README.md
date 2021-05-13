@@ -8,7 +8,10 @@ of a program.
 Building
 --------
 
-Simply go into BeGUI directory and type ``bash creationx86.script``.
+Simply go into BeGUI directory and type ``build.script`` to build the project.
+Type ``clean.script`` to clean the project.
+
+The whole build will be installed in the BeGUI folder.
 
 
 Copyright
